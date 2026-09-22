@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     private bool canStab;
     //private int decade;
 
-    private GameObject knife;
+    private MeshRenderer knife;
 
     [SerializeField]
     TMP_Text status;
@@ -23,11 +23,11 @@ public class PlayerInteraction : MonoBehaviour
     void Update() {
         if (keyboard.eKey.wasPressedThisFrame) {
             if ((canStab && alive)) {
-                knife.SetActive(false);
+                knife.enabled = false;
                 ChangeStatus();
                 canStab = false;
             } else if (!alive) {
-                knife.SetActive(true);
+                knife.enabled = true;
                 ChangeStatus();
             }
         }
@@ -37,7 +37,7 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Knife")) {
             if (alive) {
                 canStab = true;
-                knife = collision.gameObject;
+                knife = collision.gameObject.GetComponent<MeshRenderer>();
             }
         }
     }
