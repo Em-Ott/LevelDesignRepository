@@ -25,7 +25,6 @@ public class PlayerInteraction : MonoBehaviour
             if ((canStab && alive)) {
                 knife.enabled = false;
                 ChangeStatus();
-                canStab = false;
             } else if (!alive) {
                 knife.enabled = true;
                 ChangeStatus();
@@ -44,9 +43,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnCollisionExit (Collision collision) {
         if (collision.gameObject.CompareTag("Knife")) {
-            if (alive) {
-                canStab = false;
-            }
+            canStab = false;
         }
     }
 
