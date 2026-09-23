@@ -1,17 +1,28 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using TMPro;
 
 public class GhostInteraction : MonoBehaviour
 {
     [SerializeField]
     MeshRenderer decadeKnife;
-    MeshRenderer ghost;
 
+    [SerializeField]
+    GameObject ghostTextBox;
+
+    [SerializeField]
+    string ghostDialogue = "";
+
+    private Keyboard keyboard;
+    private MeshRenderer ghost;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        keyboard = Keyboard.current;
         ghost = gameObject.GetComponent<MeshRenderer>();
         ghost.enabled = false;
+        ghostTextBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,7 +31,23 @@ public class GhostInteraction : MonoBehaviour
         if (!decadeKnife.enabled) {
             ghost.enabled = true;
         } else {
+            if (ghost.enabled == true) {
+                ghostTextBox.SetActive(false);
+            }
             ghost.enabled = false;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        if (ghost.enabled && collision.gameObject.CompareTag("Player")) {
+            ghostTextBox.SetActive(true);
+            ghostTextBox.transform.GetChild(0).GetComponent<TMP_Text>().text = ghostDialogue;
+        }
+    }
+
+    void OnCollisionExit(Collision collision) {
+        if (ghost.enabled && collision.gameObject.CompareTag("Player")) {
+            ghostTextBox.SetActive(false);
         }
     }
 }
