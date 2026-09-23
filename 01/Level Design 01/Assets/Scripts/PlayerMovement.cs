@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float _maxClampForYRotation;
     [SerializeField]
+    private float _mouseSensitivity;
+    [SerializeField]
     private Camera _playerCamera;
     private Rigidbody _rigidBody;
     private Keyboard _keyboard;
@@ -86,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 mouseRotation = _mouse.delta.ReadValue();
         Transform cameraTransform = _playerCamera.gameObject.transform;
 
-        yaw += mouseRotation.x;
+        yaw += mouseRotation.x * _mouseSensitivity;
 
         Quaternion playerRotation = Quaternion.Euler(0, yaw, 0);
         return playerRotation;
