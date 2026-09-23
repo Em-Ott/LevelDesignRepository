@@ -7,7 +7,6 @@ public class PlayerInteraction : MonoBehaviour
     private Keyboard keyboard;
     private bool alive = true;
     private bool canStab;
-    //private int decade;
 
     private MeshRenderer knife;
 
@@ -17,7 +16,6 @@ public class PlayerInteraction : MonoBehaviour
     void Start() {
         keyboard = Keyboard.current;
         canStab = false;
-        //decade = 0;
     }
 
     void Update() {
@@ -32,17 +30,17 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter (Collision collision) {
-        if (collision.gameObject.CompareTag("Knife")) {
+    void OnTriggerEnter (Collider collider) {
+        if (collider.gameObject.CompareTag("Knife")) {
             if (alive) {
                 canStab = true;
-                knife = collision.gameObject.GetComponent<MeshRenderer>();
+                knife = collider.gameObject.GetComponent<MeshRenderer>();
             }
         }
     }
 
-    void OnCollisionExit (Collision collision) {
-        if (collision.gameObject.CompareTag("Knife")) {
+    void OnTriggerExit (Collider collider) {
+        if (collider.gameObject.CompareTag("Knife")) {
             canStab = false;
         }
     }

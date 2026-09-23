@@ -38,15 +38,15 @@ public class GhostInteraction : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (ghost.enabled && collision.gameObject.CompareTag("Player")) {
+    void OnTriggerEnter(Collider collider) {
+        if (ghost.enabled && collider.gameObject.CompareTag("Player")) {
             ghostTextBox.SetActive(true);
             ghostTextBox.transform.GetChild(0).GetComponent<TMP_Text>().text = ghostDialogue;
         }
     }
 
-    void OnCollisionExit(Collision collision) {
-        if (ghost.enabled && collision.gameObject.CompareTag("Player")) {
+    void OnTriggerExit(Collider collider) {
+        if (ghost.enabled && collider.gameObject.CompareTag("Player")) {
             ghostTextBox.SetActive(false);
         }
     }
