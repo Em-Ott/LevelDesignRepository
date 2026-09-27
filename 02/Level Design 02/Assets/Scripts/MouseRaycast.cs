@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 /*
 Note should change this so it isn't a raycast and we just use sphere/some cone?
@@ -22,6 +23,8 @@ public class MouseRaycast : MonoBehaviour
     // Editing actual flashlight size will likely require spotAngle + innerSpotAngle adjustments 
     [SerializeField]
     private Transform _lightTransform;
+    [SerializeField]
+    private TextMeshProUGUI _foundText;
     private InputAction _mouseLookAction;
     private string _currentTag = "";
     private int _foundTags = 0;
@@ -50,6 +53,7 @@ public class MouseRaycast : MonoBehaviour
             {
                 _requiredTags[i].Found = true;
                 _foundTags++;
+                _foundText.text = string.Format("Protectors Found: {0}", _foundTags);
             }
         }
     }
