@@ -20,6 +20,8 @@ public class MouseRaycast : MonoBehaviour
 {
     [SerializeField]
     private Protector[] _requiredTags;
+    [SerializeField]
+    private int _objectsToFind = 0;
     // Editing actual flashlight size will likely require spotAngle + innerSpotAngle adjustments 
     [SerializeField]
     private Transform _lightTransform;
@@ -28,6 +30,8 @@ public class MouseRaycast : MonoBehaviour
     private InputAction _mouseLookAction;
     private string _currentTag = "";
     private int _foundTags = 0;
+    private Action<bool> gameWon;
+    private bool _gameOver = false;
 
     void Start()
     {
@@ -35,14 +39,24 @@ public class MouseRaycast : MonoBehaviour
         _mouseLookAction = InputSystem.actions.FindAction("Look");
     }
 
+    public void Init(Action<bool> gameOver)
+    {
+        gameWon = gameOver;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (_mouseLookAction.WasPerformedThisFrame())
+        if (!_gameOver && _mouseLookAction.WasPerformedThisFrame())
         {
             _currentTag = MakeRaycast();
             CheckIfCurrentTagRequired();
         }
+    }
+
+    public void GameOver()
+    {
+        _gameOver = true;
     }
 
     private void CheckIfCurrentTagRequired()
@@ -54,6 +68,12 @@ public class MouseRaycast : MonoBehaviour
                 _requiredTags[i].Found = true;
                 _foundTags++;
                 _foundText.text = string.Format("Protectors Found: {0}", _foundTags);
+
+                if (_objectsToFind == _foundTags)
+                {
+                    gameWon?.Invoke(true);
+                    _gameOver = true;
+                }
             }
         }
     }

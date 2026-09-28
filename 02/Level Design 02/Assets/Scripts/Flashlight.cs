@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -14,6 +15,9 @@ public class Flashlight : MonoBehaviour
     private InputAction _flashlightAction;
     private float _batteryPercentage = 100f;
     private float _counter = 0f;
+    private Action<bool> GameWon;
+    private Action<float> BatteryChanged;
+    private bool _gameOver = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,9 +27,15 @@ public class Flashlight : MonoBehaviour
         _flashlightAction.performed += _ => ChangeFlashlightVisibility();
     }
 
+    public void Init(Action<bool> gameOver, Action<float> batteryChnaged)
+    {
+        GameWon = gameOver;
+        BatteryChanged = batteryChnaged;
+    }
+
     void Update()
     {
-        if (_batteryPercentage == 0) { return; }
+        if (_gameOver || !_flashlight.activeSelf) { return; }
 
         _counter += Time.deltaTime;
 
@@ -33,10 +43,21 @@ public class Flashlight : MonoBehaviour
         {
             _batteryPercentage -= 1;
             _counter = 0;
+            if (_batteryPercentage % 10 == 0) { BatteryChanged?.Invoke(_batteryPercentage); }
             _batteryPercentageText.text = string.Format("Battery: {0}%", _batteryPercentage);
         }
 
-        if (_batteryPercentage == 0) { _flashlight.SetActive(false); }
+        if (_batteryPercentage == 0)
+        {
+            _flashlight.SetActive(false);
+            GameWon?.Invoke(false);
+            _gameOver = true;
+        }
+    }
+
+    public void GameOver()
+    {
+        _gameOver = true;
     }
 
     private void ChangeFlashlightVisibility()

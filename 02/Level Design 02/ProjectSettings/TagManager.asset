@@ -7,6 +7,7 @@ TagManager:
   - plushie
   - book
   - photo
+  - bed
   layers:
   - Default
   - TransparentFX
