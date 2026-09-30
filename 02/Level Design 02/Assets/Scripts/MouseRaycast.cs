@@ -75,7 +75,7 @@ public class MouseRaycast : MonoBehaviour
             {
                 _requiredTags[i].Found = true;
                 _foundTags++;
-                _foundText.text = string.Format("Protectors Found: {0}", _foundTags);
+                _foundText.text = string.Format("Friends Found: {0}", _foundTags);
 
                 if (_objectsToFind == _foundTags)
                 {
