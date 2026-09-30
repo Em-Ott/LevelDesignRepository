@@ -17,7 +17,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GoToBed _sleep;
     [SerializeField]
-    private Material _daySkybox;
+    private GameObject _nightOutdoors;
+    [SerializeField]
+    private GameObject _dayOutdoors;
     private Action<bool> gameOver;
     private Action<float> batteryChanged;
     private Action gameStart;
@@ -69,6 +71,7 @@ public class GameController : MonoBehaviour
         _playerLook.enabled = false;
         _playerMovement.enabled = true;
         _playerMovement.FixAngles();
-        RenderSettings.skybox = _daySkybox;
+        _dayOutdoors.SetActive(true);
+        _nightOutdoors.SetActive(false);
     }
 }
