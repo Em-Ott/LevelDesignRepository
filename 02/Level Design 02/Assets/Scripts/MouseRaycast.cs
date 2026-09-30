@@ -32,6 +32,7 @@ public class MouseRaycast : MonoBehaviour
     private int _foundTags = 0;
     private Action<bool> gameWon;
     private bool _gameOver = false;
+    private bool _gameStarted = false;
 
     void Start()
     {
@@ -44,10 +45,15 @@ public class MouseRaycast : MonoBehaviour
         gameWon = gameOver;
     }
 
+    public void StartGame()
+    {
+        _gameStarted = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (!_gameOver && _mouseLookAction.WasPerformedThisFrame())
+        if (!_gameOver && _gameStarted && _mouseLookAction.WasPerformedThisFrame())
         {
             _currentTag = MakeRaycast();
             CheckIfCurrentTagRequired();

@@ -12,11 +12,11 @@ public class Monster : MonoBehaviour
     [SerializeField]
     private GameObject _player;
     [SerializeField]
-    private Vector2[] _highBatteryLocations;
+    private Vector3[] _highBatteryLocations;
     [SerializeField]
-    private Vector2[] _mediumBatteryLocations;
+    private Vector3[] _mediumBatteryLocations;
     [SerializeField]
-    private Vector2[] _lowBatteryLocations;
+    private Vector3[] _lowBatteryLocations;
     [SerializeField]
     private float _highBatteryMinimum = 65f;
     [SerializeField]
@@ -24,7 +24,7 @@ public class Monster : MonoBehaviour
 
     public void TeleportMonsterToRandomLocation(float batteryPercentage)
     {
-        Vector2 newPosition = new Vector2(0, 0);
+        Vector3 newPosition = new Vector3(0, 0, 0);
         if (batteryPercentage >= _highBatteryMinimum)
         {
             int rand = Random.Range(0, _highBatteryLocations.Length);
@@ -40,12 +40,17 @@ public class Monster : MonoBehaviour
             int rand = Random.Range(0, _lowBatteryLocations.Length);
             newPosition = _lowBatteryLocations[rand];
         }
-        _monster.transform.position = newPosition;
+        _monster.transform.localPosition = newPosition;
+    }
+
+    public void ShowMonster()
+    {
+        _monster.SetActive(true);
     }
 
     public void PlayerLoss()
     {
-        _monster.transform.position = _player.transform.position;
+        _monster.transform.position = _player.transform.position + new Vector3(0, 0, 1.75f);
     }
 
     public void PlayerWin()

@@ -18,6 +18,7 @@ public class Flashlight : MonoBehaviour
     private Action<bool> GameWon;
     private Action<float> BatteryChanged;
     private bool _gameOver = false;
+    private bool _gameStarted = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,9 +34,14 @@ public class Flashlight : MonoBehaviour
         BatteryChanged = batteryChnaged;
     }
 
+    public void StartGame()
+    {
+        _gameStarted = true;
+    }
+
     void Update()
     {
-        if (_gameOver || !_flashlight.activeSelf) { return; }
+        if (_gameOver || !_gameStarted || !_flashlight.activeSelf) { return; }
 
         _counter += Time.deltaTime;
 
@@ -58,11 +64,12 @@ public class Flashlight : MonoBehaviour
     public void GameOver()
     {
         _gameOver = true;
+        _flashlight.SetActive(false);
     }
 
     private void ChangeFlashlightVisibility()
     {
-        if (_batteryPercentage == 0) { return; }
+        if (_batteryPercentage == 0 || !_gameStarted || _gameOver) { return; }
         _flashlight.SetActive(!_flashlight.activeSelf);
     }
 }

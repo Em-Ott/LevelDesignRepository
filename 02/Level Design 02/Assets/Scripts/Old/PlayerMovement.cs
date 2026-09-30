@@ -33,8 +33,16 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody>();
+        _rigidBody = GetComponentInChildren<Rigidbody>();
         if (!_rigidBody) { Debug.Log("Please attach a rigidbody to player."); }
+    }
+
+    public void FixAngles()
+    {
+        this.gameObject.GetComponentInChildren<CapsuleCollider>().enabled = true;
+        this._playerCamera.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        this.gameObject.transform.position = new Vector3(-1.65f, 0.375f, 1.124f);
     }
 
     // Update is called once per frame
