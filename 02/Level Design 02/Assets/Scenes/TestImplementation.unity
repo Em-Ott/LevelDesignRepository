@@ -91306,6 +91306,7 @@ MonoBehaviour:
   _mouseRaycast: {fileID: 1728511399}
   _flashlight: {fileID: 1728511400}
   _sleep: {fileID: 1728511401}
+  _daySkybox: {fileID: 2100000, guid: 80bbd7c634e0240398962e1605625afa, type: 2}
 --- !u!4 &1716153348
 Transform:
   m_ObjectHideFlags: 0
@@ -93523,6 +93524,7 @@ MonoBehaviour:
   _objectsToFind: 3
   _lightTransform: {fileID: 689709289}
   _foundText: {fileID: 1146428618}
+  _flashlight: {fileID: 689709288}
 --- !u!114 &1728511400
 MonoBehaviour:
   m_ObjectHideFlags: 0

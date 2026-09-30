@@ -27,6 +27,8 @@ public class MouseRaycast : MonoBehaviour
     private Transform _lightTransform;
     [SerializeField]
     private TextMeshProUGUI _foundText;
+    [SerializeField]
+    private GameObject _flashlight;
     private InputAction _mouseLookAction;
     private string _currentTag = "";
     private int _foundTags = 0;
@@ -53,7 +55,7 @@ public class MouseRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_gameOver && _gameStarted && _mouseLookAction.WasPerformedThisFrame())
+        if (!_gameOver && _gameStarted && _mouseLookAction.WasPerformedThisFrame() && _flashlight.activeSelf)
         {
             _currentTag = MakeRaycast();
             CheckIfCurrentTagRequired();

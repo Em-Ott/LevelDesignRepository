@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     private Flashlight _flashlight;
     [SerializeField]
     private GoToBed _sleep;
+    [SerializeField]
+    private Material _daySkybox;
     private Action<bool> gameOver;
     private Action<float> batteryChanged;
     private Action gameStart;
@@ -31,11 +33,6 @@ public class GameController : MonoBehaviour
         _sleep.Init(gameStart);
 
         _playerLook.enabled = false;
-    }
-
-    void Update()
-    {
-
     }
 
     private void StartGame()
@@ -72,5 +69,6 @@ public class GameController : MonoBehaviour
         _playerLook.enabled = false;
         _playerMovement.enabled = true;
         _playerMovement.FixAngles();
+        RenderSettings.skybox = _daySkybox;
     }
 }
