@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerLook : MonoBehaviour
+public class PlayerLookFPov : MonoBehaviour
 {
     [SerializeField]
     private float _minClampForYRotation;
@@ -15,6 +15,8 @@ public class PlayerLook : MonoBehaviour
     private float _mouseSensitivity;
     [SerializeField]
     private Camera _playerCamera;
+    [SerializeField]
+    private Transform _playerTransform;
     private Transform _cameraTransform;
     private InputAction _mouseLookAction;
     private float yaw;
@@ -34,29 +36,32 @@ public class PlayerLook : MonoBehaviour
     {
         if (_mouseLookAction.WasPerformedThisFrame())
         {
-            Quaternion rotation = MouseLook(_mouseLookAction.ReadValue<Vector2>());
-            HandleMouseLook(rotation);
+            (float x, float y) rotation = MouseLook(_mouseLookAction.ReadValue<Vector2>());
+            HandleMouseLook(rotation.x, rotation.y);
         }
     }
 
     // Adjusts the rotation of the body off the given quaternion
-    public void HandleMouseLook(Quaternion rotation)
+    public void HandleMouseLook(float pitch, float yaw)
     {
-        _cameraTransform.localRotation = rotation;
+        Quaternion playerRotation = Quaternion.Euler(0, yaw, 0);
+        Quaternion cameraRotation = Quaternion.Euler(pitch, 0, 0);
+
+        _playerTransform.rotation = playerRotation;
+        _cameraTransform.localRotation = cameraRotation;
     }
 
     // Returns where the mouse is looking at
-    private Quaternion MouseLook(Vector2 mouseInput)
+    private (float x, float y) MouseLook(Vector2 mouseInput)
     {
         Transform cameraTransform = _playerCamera.gameObject.transform;
 
         yaw += mouseInput.x * _mouseSensitivity;
         pitch -= mouseInput.y * _mouseSensitivity;
 
-        yaw = Mathf.Clamp(yaw, _minClampForYRotation, _maxClampForYRotation);
-        pitch = Mathf.Clamp(pitch, _minClampForXRotation, _maxClampForXRotation);
+        if (_minClampForYRotation != _maxClampForYRotation) { yaw = Mathf.Clamp(yaw, _minClampForYRotation, _maxClampForYRotation); }
+        if (_minClampForXRotation != _maxClampForXRotation) { pitch = Mathf.Clamp(pitch, _minClampForXRotation, _maxClampForXRotation); }
 
-        Quaternion playerRotation = Quaternion.Euler(pitch, yaw, 0);
-        return playerRotation;
+        return (pitch, yaw);
     }
 }
