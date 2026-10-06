@@ -34,7 +34,7 @@ namespace StarterAssets
 
             if (!vcam)
             {
-                if (TryLocatePrefab(CinemachineVirtualCameraName, new string[]{prefabFolder}, new[] { typeof(CinemachineCamera) }, out GameObject vcamPrefab, out string _))
+                if (TryLocatePrefab(CinemachineVirtualCameraName, new string[] { prefabFolder }, new[] { typeof(CinemachineCamera) }, out GameObject vcamPrefab, out string _))
                 {
                     HandleInstantiatingPrefab(vcamPrefab, out vcam);
                     _cinemachineVirtualCamera = vcam;
@@ -70,7 +70,7 @@ namespace StarterAssets
             if (mainCameras.Length < 1)
             {
                 // if there are no MainCameras, add one
-                if (TryLocatePrefab(MainCameraPrefabName, new string[]{inFolder}, new[] { typeof(CinemachineBrain), typeof(Camera) }, out GameObject camera, out string _))
+                if (TryLocatePrefab(MainCameraPrefabName, new string[] { inFolder }, new[] { typeof(CinemachineBrain), typeof(Camera) }, out GameObject camera, out string _))
                 {
                     HandleInstantiatingPrefab(camera, out _);
                 }
@@ -104,7 +104,7 @@ namespace StarterAssets
             for (int i = 0; i < allPrefabs.Length; ++i)
             {
                 string assetPath = AssetDatabase.GUIDToAssetPath(allPrefabs[i]);
-                
+
                 if (assetPath.Contains("/com.unity.starter-assets/"))
                 {
                     Object loadedObj = AssetDatabase.LoadMainAssetAtPath(assetPath);
@@ -125,12 +125,12 @@ namespace StarterAssets
 
                         if (hasRequiredComponents)
                         {
-                             if (loadedGo.name == name)
-                             {
-                                 prefab = loadedGo;
-                                 path = assetPath;
-                                 return true;
-                             }                           
+                            if (loadedGo.name == name)
+                            {
+                                prefab = loadedGo;
+                                path = assetPath;
+                                return true;
+                            }
                         }
                     }
                 }
