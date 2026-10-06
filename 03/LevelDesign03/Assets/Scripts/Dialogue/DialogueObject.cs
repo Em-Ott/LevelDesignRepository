@@ -10,7 +10,12 @@ public class DialogueObject : ScriptableObject
     private string _characterName;
     public string CharacterName { get { return _characterName; } }
 
+    [Header("Next Dialogue to Different Character or Choices")]
+    [Tooltip("PLEASE ONLY DO ONE. Defaults to choices if both.")]
     [SerializeField]
-    private DialogueOption[] _choices;
-    public DialogueOption[] Choices { get { return _choices; } }
+    private DialogueObject _nextDialogue;
+    public DialogueObject NextDialogue { get { return _nextDialogue; } }
+    [SerializeField]
+    private DialogueOption _choices;
+    public DialogueOption Choices { get { return _choices; } }
 }

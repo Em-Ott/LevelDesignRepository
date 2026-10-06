@@ -46,6 +46,10 @@ public class DialogueText : MonoBehaviour
         // Without this, the outline might get "clipped" or cut off at the edges
         _speakingText.UpdateMeshPadding();
         _characterText.UpdateMeshPadding();
+
+        // Would like to move this elsewhere so we can get cool and specific effects on each dialogue
+        // but for small project best to stay here
+        SetChoiceOutlineColor();
     }
 
     public void SetChoiceOutlineColor()
@@ -60,9 +64,9 @@ public class DialogueText : MonoBehaviour
 
     public void SetChoiceBoxText(string optionText, int choiceBoxNum)
     {
-        if (_choiceText.Length >= choiceBoxNum)
+        if (choiceBoxNum >= _choiceText.Length)
         {
-            Debug.Log("there's only support for two dialogue choices unless if u add more button in prefab");
+            Debug.Log("out of range dialogue trying to set");
         }
         _choiceText[choiceBoxNum].text = optionText;
     }

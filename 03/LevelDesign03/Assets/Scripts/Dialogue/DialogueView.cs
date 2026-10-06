@@ -12,11 +12,10 @@ public class DialogueView : MonoBehaviour
     [SerializeField]
     private DialogueText _text;
     [SerializeField]
-    private Button[] _choiceButton;
-    private DialogueOption _choiceA;
-    private DialogueOption _choiceB;
+    private Button[] _choiceButtons;
     private InputAction _mouseClickAction;
     private bool _playerDoneWithDialogue;
+    private int _playerMadeChoice;
 
     void Start()
     {
@@ -25,8 +24,13 @@ public class DialogueView : MonoBehaviour
         Debug.Log(_choiceUI);
         _choiceUI.SetActive(false);
         _dialogueUI.SetActive(false);
-        //_choiceButton[0].onClick += FirstChoiceButtonClicked;
-        //_choiceButton[1].onClick += SecondChoiceButtonClicked;
+
+        for (int i = 0; i < _choiceButtons.Length; i++)
+        {
+            int index = i;
+            Debug.Log(i);
+            _choiceButtons[i].onClick.AddListener(() => ChoiceButtonClicked(index));
+        }
     }
 
     public async Task OnStartDialogue(DialogueObject dialogue)
@@ -45,14 +49,10 @@ public class DialogueView : MonoBehaviour
         _playerDoneWithDialogue = true;
     }
 
-    private void FirstChoiceButtonClicked()
+    private void ChoiceButtonClicked(int index)
     {
-
-    }
-
-    private void SecondChoiceButtonClicked()
-    {
-
+        _playerMadeChoice = index;
+        Debug.Log("updating player choice to!!!" + index);
     }
 
     private async Task RunDialogue(DialogueObject dialogue)
@@ -69,9 +69,13 @@ public class DialogueView : MonoBehaviour
             }
         }
 
-        if (dialogue.Choices.Length > 0)
+        if (dialogue.Choices != null)
         {
-            DisplayChoices(dialogue.Choices);
+            await DisplayChoices(dialogue.Choices);
+        }
+        else if (dialogue.NextDialogue != null)
+        {
+            await OnStartDialogue(dialogue.NextDialogue);
         }
         else
         {
@@ -79,14 +83,57 @@ public class DialogueView : MonoBehaviour
         }
     }
 
-    private void DisplayChoices(DialogueOption[] options)
+    private async Task DisplayChoices(DialogueOption options)
     {
+        _playerMadeChoice = -1;
         _choiceUI.SetActive(true);
-        int i = 0;
-        foreach (DialogueOption option in options)
+
+        // Update dialogue buttons text
+        for (int i = 0; i < options.Choices.Length; i++)
         {
-            //_text.SetCharacterText(option.Choice.ChoiceText, i);
-            i++;
+            _text.SetChoiceBoxText(options.Choices[i].ChoiceText, i);
+        }
+
+        // Wait for player to make choice (click)
+        while (_playerMadeChoice == -1)
+        {
+            await Awaitable.WaitForSecondsAsync(0.1f);
+        }
+
+        Debug.Log("we escaped");
+
+        ChoiceDialogueStruct choice = options.Choices[_playerMadeChoice];
+        Debug.Log("out of bounds ig?");
+        _choiceUI.SetActive(false);
+
+        // Continue dialogue if appropriate
+        if (choice.Result == null)
+        {
+            Debug.Log("exit");
+            if (choice.Correct)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            return;
+        }
+        else
+        {
+            Debug.Log("do this");
+            if (choice.Correct)
+            {
+
+            }
+            else
+            {
+
+            }
+            _playerMadeChoice = -1;
+            await this.OnStartDialogue(choice.Result);
         }
     }
 }

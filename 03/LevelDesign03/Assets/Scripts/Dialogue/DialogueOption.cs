@@ -8,6 +8,7 @@ public class DialogueOption : ScriptableObject
     public ChoiceDialogueStruct[] Choices { get { return _choice; } }
 }
 
+[System.Serializable]
 public struct ChoiceDialogueStruct
 {
     public string ChoiceText;
