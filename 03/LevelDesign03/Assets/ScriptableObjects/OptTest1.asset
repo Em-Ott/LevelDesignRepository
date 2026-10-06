@@ -15,7 +15,9 @@ MonoBehaviour:
   _choice:
   - ChoiceText: i choose u!
     Correct: 0
+    ChoiceKillsYou: 1
     Result: {fileID: 11400000, guid: f36c34331b1232a4192481681280ebfe, type: 2}
   - ChoiceText: sry pikachu my true love
     Correct: 1
+    ChoiceKillsYou: 0
     Result: {fileID: 11400000, guid: ca1d2277c991e1c49a2fbe8659cea75a, type: 2}

@@ -21,6 +21,7 @@ public class PlayerLookFPov : MonoBehaviour
     private InputAction _mouseLookAction;
     private float yaw;
     private float pitch;
+    private bool _allowLook = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,11 +35,16 @@ public class PlayerLookFPov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_mouseLookAction.WasPerformedThisFrame())
+        if (_mouseLookAction.WasPerformedThisFrame() && _allowLook)
         {
             (float x, float y) rotation = MouseLook(_mouseLookAction.ReadValue<Vector2>());
             HandleMouseLook(rotation.x, rotation.y);
         }
+    }
+
+    public void AllowLook(bool allowed)
+    {
+        _allowLook = allowed;
     }
 
     // Adjusts the rotation of the body off the given quaternion

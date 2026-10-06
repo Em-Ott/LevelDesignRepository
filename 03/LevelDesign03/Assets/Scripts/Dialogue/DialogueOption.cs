@@ -13,6 +13,7 @@ public struct ChoiceDialogueStruct
 {
     public string ChoiceText;
     public bool Correct;
+    public bool ChoiceKillsYou;
     public DialogueObject Result;
 }
 

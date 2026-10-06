@@ -9,6 +9,10 @@ public class PlayerInteract : MonoBehaviour
     private Vector3 _interactRange;
     [SerializeField]
     private DialogueView _view;
+    [SerializeField]
+    private PlayerMove _move;
+    [SerializeField]
+    private PlayerLookFPov _look;
     private InputAction _interactAction;
     private bool _inDialogue;
 
@@ -16,8 +20,6 @@ public class PlayerInteract : MonoBehaviour
     void Start()
     {
         _interactAction = InputSystem.actions.FindAction("Interact");
-        Debug.Log(_interactAction);
-        Debug.Log(_interactAction.enabled);
         _inDialogue = false;
         _interactAction.performed += HandleInteract;
     }
@@ -34,7 +36,6 @@ public class PlayerInteract : MonoBehaviour
             allDialogueObjects.AddRange(possibleDialogueOptions);
         }
 
-        Debug.Log(allDialogueObjects.Count);
         DialogueInstance highestPriorityObject = null;
         int priority = 100;
         for (int i = 0; i < allDialogueObjects.Count; i++)
@@ -52,7 +53,6 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            Debug.Log("trying to start");
             _ = HandleFlagChange(highestPriorityObject);
             highestPriorityObject.Read = true;
         }
@@ -61,9 +61,11 @@ public class PlayerInteract : MonoBehaviour
     async Task HandleFlagChange(DialogueInstance currentInstance)
     {
         _inDialogue = true;
-        Debug.Log("trying...");
+        _move.AllowMove(false);
+        _look.AllowLook(false);
         await _view.OnStartDialogue(currentInstance.Dialogue);
-        Debug.Log("done");
+        _move.AllowMove(true);
+        _look.AllowLook(true);
         _inDialogue = false;
     }
 }

@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private Transform _playerTransform;
     private Quaternion _previousPlayerRotation;
     private Vector3 _currentVelocity = Vector3.zero;
+    private bool _allowMove = true;
 
     void Awake()
     {
@@ -32,7 +33,17 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!_allowMove) { return; }
         _rigidBody.linearVelocity = _currentVelocity;
+    }
+
+    public void AllowMove(bool allowed)
+    {
+        _allowMove = allowed;
+        if (!allowed)
+        {
+            _rigidBody.linearVelocity = Vector3.zero;
+        }
     }
 
     // Adjust velocity to match new playerTransform.forward, this may need to be adjusted depending on FPov, ThirdPoV, etc.

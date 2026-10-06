@@ -13,6 +13,8 @@ public class DialogueView : MonoBehaviour
     private DialogueText _text;
     [SerializeField]
     private Button[] _choiceButtons;
+    [SerializeField]
+    private GameObject _lossScreen;
     private InputAction _mouseClickAction;
     private bool _playerDoneWithDialogue;
     private int _playerMadeChoice;
@@ -21,26 +23,22 @@ public class DialogueView : MonoBehaviour
     {
         _mouseClickAction = InputSystem.actions.FindAction("Attack");
         _mouseClickAction.performed += NextDialogue;
-        Debug.Log(_choiceUI);
         _choiceUI.SetActive(false);
         _dialogueUI.SetActive(false);
 
         for (int i = 0; i < _choiceButtons.Length; i++)
         {
             int index = i;
-            Debug.Log(i);
             _choiceButtons[i].onClick.AddListener(() => ChoiceButtonClicked(index));
         }
     }
 
     public async Task OnStartDialogue(DialogueObject dialogue)
     {
-        Debug.Log("starting dialogue!");
         _playerDoneWithDialogue = false;
         _dialogueUI.SetActive(true);
         _choiceUI.SetActive(false);
         await RunDialogue(dialogue);
-        Debug.Log("dialogue done :9");
         _dialogueUI.SetActive(false);
     }
 
@@ -52,7 +50,6 @@ public class DialogueView : MonoBehaviour
     private void ChoiceButtonClicked(int index)
     {
         _playerMadeChoice = index;
-        Debug.Log("updating player choice to!!!" + index);
     }
 
     private async Task RunDialogue(DialogueObject dialogue)
@@ -100,38 +97,32 @@ public class DialogueView : MonoBehaviour
             await Awaitable.WaitForSecondsAsync(0.1f);
         }
 
-        Debug.Log("we escaped");
 
         ChoiceDialogueStruct choice = options.Choices[_playerMadeChoice];
-        Debug.Log("out of bounds ig?");
         _choiceUI.SetActive(false);
 
-        // Continue dialogue if appropriate
-        if (choice.Result == null)
+        if (choice.ChoiceKillsYou)
         {
-            Debug.Log("exit");
-            if (choice.Correct)
+            if (choice.Result != null)
             {
-
+                await this.OnStartDialogue(choice.Result);
             }
-            else
-            {
-
-            }
-
+            _lossScreen.SetActive(true);
             return;
+        }
+
+        if (choice.Correct)
+        {
+
         }
         else
         {
-            Debug.Log("do this");
-            if (choice.Correct)
-            {
 
-            }
-            else
-            {
+        }
 
-            }
+        // Continue dialogue if appropriate
+        if (choice.Result != null)
+        {
             _playerMadeChoice = -1;
             await this.OnStartDialogue(choice.Result);
         }
