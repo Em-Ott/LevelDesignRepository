@@ -58,7 +58,7 @@ public class DialogueText : MonoBehaviour
         }
     }
 
-    public void SetChoiceBox(string optionText, int choiceBoxNum)
+    public void SetChoiceBoxText(string optionText, int choiceBoxNum)
     {
         if (_choiceText.Length >= choiceBoxNum)
         {

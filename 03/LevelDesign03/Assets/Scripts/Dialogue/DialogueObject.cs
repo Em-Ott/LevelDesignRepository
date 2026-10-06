@@ -13,5 +13,4 @@ public class DialogueObject : ScriptableObject
     [SerializeField]
     private DialogueOption[] _choices;
     public DialogueOption[] Choices { get { return _choices; } }
-
 }
