@@ -15,6 +15,10 @@ public class DialogueView : MonoBehaviour
     private Button[] _choiceButtons;
     [SerializeField]
     private GameObject _lossScreen;
+    [SerializeField]
+    private GameObject _happyGF;
+    [SerializeField]
+    private GameObject _scaryGF;
     private InputAction _mouseClickAction;
     private bool _playerDoneWithDialogue;
     private int _playerMadeChoice;
@@ -100,6 +104,12 @@ public class DialogueView : MonoBehaviour
 
         ChoiceDialogueStruct choice = options.Choices[_playerMadeChoice];
         _choiceUI.SetActive(false);
+
+        if (choice.SecondPhaseStart)
+        {
+            _scaryGF.SetActive(true);
+            _happyGF.SetActive(false);
+        }
 
         if (choice.ChoiceKillsYou)
         {
