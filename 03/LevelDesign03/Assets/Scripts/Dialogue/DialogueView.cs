@@ -19,6 +19,8 @@ public class DialogueView : MonoBehaviour
     private GameObject _happyGF;
     [SerializeField]
     private GameObject _scaryGF;
+    [SerializeField]
+    private GameObject _spotlight;
     private InputAction _mouseClickAction;
     private bool _playerDoneWithDialogue;
     private int _playerMadeChoice;
@@ -109,6 +111,7 @@ public class DialogueView : MonoBehaviour
         {
             _scaryGF.SetActive(true);
             _happyGF.SetActive(false);
+            _spotlight.SetActive(true);
         }
 
         if (choice.ChoiceKillsYou)
