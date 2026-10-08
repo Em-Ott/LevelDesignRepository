@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: Dialogue 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - I know my girlfriend is incredible, I mean, she just donated all of her prize
+    money she got for that award-winning dress she designed to charity.
+  - "She\u2019s so talented, and so dedicated\u2026but something\u2019s just not
+    right. My friends don\u2019t come say hi anymore."
+  - I think I might want to break up with her.
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

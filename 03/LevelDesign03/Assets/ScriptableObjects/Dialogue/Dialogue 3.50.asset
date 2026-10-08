@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f12abaffd7e3b4bb376ca94075a553, type: 3}
+  m_Name: Dialogue 3.50
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  _choice:
+  - ChoiceText: 'I did get you a gift '
+    Correct: 0
+    ChoiceKillsYou: 0
+    SecondPhaseStart: 0
+    Result: {fileID: 11400000, guid: 0da11086b57f92946877657093b79ad0, type: 2}
+  - ChoiceText: 'Your birthday is next month '
+    Correct: 1
+    ChoiceKillsYou: 0
+    SecondPhaseStart: 0
+    Result: {fileID: 11400000, guid: 7cc251b39a4450646b8cf22ca0b6cbcc, type: 2}

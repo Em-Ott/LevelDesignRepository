@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: Dialogue 3.40
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "And you know what, while we\u2019re on the topic of mistakes you\u2019ve made,
+    you haven\u2019t EVER gotten me a birthday present!"
+  - 'After all the work I do to make you thoughtful, well-meaning gifts every anniversary! '
+  _characterName: Girlfriend
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 11400000, guid: d93482293ae2ce74cbc322b25f8a2626, type: 2}
