@@ -1,0 +1,6 @@
+{
+    "name": "Unity.ProBuilder.Editor.Tests",
+    "references": ["Unity.ProBuilder", "Unity.ProBuilder.Editor"],
+    "includePlatforms": ["Editor"],
+    "optionalUnityReferences": ["TestAssemblies"]
+}
