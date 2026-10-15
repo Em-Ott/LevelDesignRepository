@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: PlayerThoughts
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - Another day of work, another day closer to the end.
+  - "I\u2019m not sure if I should even be surprised that the owners of the company
+    haven\u2019t shut the company down. They\u2019re paying me more now that people
+    have started to quit their jobs or have died."
+  - "I was never really the type of guy to save up money, so, to survive, I have
+    to continue working. Another thing Marcy didn\u2019t like about me\u2026"
+  - "Bob always advised me to save, but I never listened\u2026 I should\u2019ve listened\u2026"
+  - "I\u2019m not sure what to do with my life. I feel like I keep coming here hoping
+    that one day\u2026 Everyone will join again, so that the world calms down\u2026
+    That everything will be like it used to."
+  - "I don't know why I keep clinging onto this useless, and impossible hope. I try
+    to distract myself from what's going on with work. It takes my mind off it, and
+    it numbs me\u2026The same thing everyday\u2026"
+  - "Now I have to do most of the things myself, meaning that it takes more time
+    to do the work\u2026 So many people have quit their jobs to be with loved ones
+    before it\u2019s too late like Marcy. "
+  - "If only I had someone to be with, maybe I wouldn\u2019t feel so numb\u2026"
+  - "All I can do is work, like a cog in a machine\u2026 But once I\u2019m infected,
+    they\u2019ll throw me out, fire me, just like they did to Dan\u2026"
+  - "\u2026 Hoping is the only thing I can do, but even now hope feels like an impossible
+    dream. I have no control over my life, all I can do is try to make it to the
+    end of the day, hoping I\u2019m next\u2026"
+  - "But, I also hope I\u2019ll make it through to the end, and live a normal life
+    again\u2026 Is that\u2026 Is that even possible anymore\u2026"
+  - "I feel so numb\u2026 But what can I do?"
+  - "... Another day of work, another day closer to the end\u2026"
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

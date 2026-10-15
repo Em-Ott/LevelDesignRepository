@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: PlayerComputer
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "\u2026the longstanding conflict appears to finally have escalated to dangerous
+    territory. Nuclear conflict is on the table. We recommend reaching out to your
+    local government and locating the site of the nearest shelter. Take only essentials
+    with you. If you become infected\u2026 "
+  _characterName: Computer
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

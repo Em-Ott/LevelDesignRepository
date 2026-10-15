@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: AlexCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - I almost thought Alex would come in today. When I last saw her, she told me she
+    had a really bad fight with her mom.
+  - She was crying, saying that she never wanted to see her again. She hugged me
+    that day.
+  - That was the last contact I had with someone. The last contact I ever will have
+    with someone.
+  - "When I heard the news, I started to think there was a chance I would see her
+    today. We could look out the window and reminisce about nothing. We wouldn\u2019t
+    be alone."
+  - But I guess she reconciled with her mom. The announcement of a nuclear war might
+    have helped.
+  - "I'd be really glad if she did. She won\u2019t have any regrets."
+  - I know I certainly do.
+  - "She\u2019ll have someone that loves her be with her on this last day."
+  - I wish I could have reconciled with everyone.
+  - Marcy especially, Dan, and Andrew as well.
+  - 'I wish someone would watch the sunset out this window with me tonight.  '
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

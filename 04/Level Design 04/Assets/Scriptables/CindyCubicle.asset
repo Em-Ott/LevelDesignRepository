@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: CindyCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "Cindy\u2019s cubicle\u2026 She always had such an eccentric taste\u2026 Even
+    her outfits were bold, and vibrant."
+  - How she made that possible while wearing a uniform is beyond me. I remember there
+    was a time when she wore mismatched socks that you could notice from a mile away!
+  - "She was so scatterbrained that she had to write sticky notes all the time. When
+    she got infected, it hit the whole team really hard\u2026"
+  - It hit Felicity the hardest.
+  - They were best friends, and would always sit at lunch together and hang out outside
+    of work.
+  - "She was the first to reach out to me when I first started working here\u2026
+    She was the life of the party, the glue that brought everyone together. "
+  - "When she died\u2026 The office never felt the same again. No one had the courage
+    to take her notes down, or throw all her clutter away\u2026"
+  - "She was the first to go, and made everything feel real\u2026"
+  - "No one on the team had lost a loved one from the virus, so even though we knew
+    people were dying, it hadn\u2019t affected us."
+  - Throwing her stuff away felt like acknowledging what was happening.
+  - "And no one wanted to do  that\u2026 "
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

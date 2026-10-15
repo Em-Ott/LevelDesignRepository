@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: AndrewCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - I was always worried about Andrew.
+  - "He often arrived late and didn\u2019t complete his tasks."
+  - While that should have made me upset, I could never get this one moment out of
+    my head. The two of us collided once, dropping our papers everywhere. I caught
+    a glimpse of his face while I was picking up my things.
+  - Sheer fear.
+  - His eyes were wide, mouth open, whole body frozen in time. He looked like he
+    had never been more terrified in his life.
+  - For his own sake, I almost hope he slept through the announcement, that he is
+    blissfully unaware, and finally able to have one day of peace and tranquility.
+  - 'I wonder if my eyes will look like that when the end comes tonight.  '
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: BobCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - Bob the builder is what we all used to call him. He hated the nickname but no
+    one stopped. He came to accept it and embrace it even.
+  - "He was, or is, I\u2019m not sure if he\u2019s still alive. Bob was very hardworking."
+  - He had a wife and 3 kids from what I recall. All he ever did was gush about his
+    family when he had the time.
+  - But whenever it was time to work, he would get very serious. He felt like the
+    big brother of the team.
+  - He was the only one to notice what was happening between Marcy and I. I never
+    confirmed it to him, so he was only going off a hunch.
+  - He would also always try to ease the tension between Dan and I.
+  - "When Felicity and Cindy wanted to celebrate and drink, he would only stay for
+    about half an hour and go home. \u201CMy family is waiting for me\u201D is what
+    he would say. He even brought his wife to one of the outings and presented her
+    to us. They seemed to be fulfilled and happy with their life."
+  - "At some point I envied what he had, but I was also happy for him. When Cindy
+    died, he was the first to quit and said he had to get his family out of the country\u2026"
+  - "He took everything, leaving his cubicle empty\u2026"
+  - "I wonder where you are now Bob\u2026"
+  - "I hope you and your family are okay and happy as ever\u2026"
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

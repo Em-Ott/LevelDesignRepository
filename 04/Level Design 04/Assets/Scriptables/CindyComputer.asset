@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
-  m_Name: test
+  m_Name: CindyComputer
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   _concurrentDialogue:
-  - dialogue works?
-  - it does
-  _characterName: mc
+  - "\u2026we strongly encourage any readers who are not in a shelter to vacate as
+    soon as they are able to\u2026"
+  _characterName: Computer
   _nextDialogue: {fileID: 0}
   _choices: {fileID: 0}

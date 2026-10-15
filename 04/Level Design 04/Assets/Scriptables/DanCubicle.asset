@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: DanCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "It all just feels so insignificant now\u2026 Like that time that you took the
+    last coffee in the pot right before I got there. Or the many times you shot down
+    all of my ideas in our meetings."
+  - "Every little slight that I took so personally, doesn\u2019t seem like such a
+    big problem anymore..."
+  - " I hope you\u2019re okay, Dan. "
+  - "Even though we\u2019ve buttheads many times, I would give anything to have you
+    working here with me again\u2026"
+  - Do you have a family?
+  - "It\u2019s funny, I\u2019d always assumed you were an eternal bachelor, but I
+    now find myself hoping you have someone to hold you one last time before the
+    end."
+  - ' I hope your absence these past couple days means you found that person.'
+  - " I hope it doesn\u2019t mean that you finally succumbed to the infection\u2026"
+  - I hope you and your companion cherish each other.
+  - Would I have hated you if I just tried to talk to you a few more times? Tried
+    to understand you?
+  - "I don\u2019t even know if I hate you now. I think I just miss you."
+  - 'You did mean something to me, I guess. '
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

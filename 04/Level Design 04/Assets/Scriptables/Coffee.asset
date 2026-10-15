@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: Coffee
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "\u2026The coffee machine\u2026 It has coffee? But I washed it last night before
+    leaving?"
+  - "The mug also has coffee inside. But that was Cindy\u2019s mug\u2026 No one has
+    used Cindy\u2019s mug since she\u2026"
+  - "Who could have\u2026 Did someone else enter the office and make coffee?"
+  - "But there\u2019s no one around."
+  - "Did Andrew come back?! I wonder how he\u2019s been! I have to ask why he decided
+    to join back. I wonder -"
+  - "But he\u2026 He wouldn\u2019t have used Cindy\u2019s mug\u2026"
+  - Did someone else get hired? Who would have come in here to make coffee and leave
+    the mug?
+  - "... It\u2019s steaming hot, which means they left right before I got here."
+  - "I wonder if I\u2019ll get to see them if they come back for their coffee\u2026
+    I wonder if now I\u2019ll have a colleague to spend time with\u2026"
+  - "Maybe things can get a little better after all\u2026I wonder if we\u2019ll become
+    friends\u2026"
+  - "Maybe\u2026 Hopefully\u2026"
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

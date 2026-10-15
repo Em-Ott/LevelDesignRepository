@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: FelicityCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "I always considered Felicity a friend. We hung out a few times after work, but
+    in the way that you do when you aren\u2019t really close."
+  - "We used to get drinks after big successes, chatted at the coffee machine about
+    both everything and nothing at all, but I didn\u2019t really know her."
+  - "I\u2019d never seen her place, never met her family, never heard about her deeper
+    struggles. We were office friends, but I don\u2019t know if our friendship would
+    have really existed without this room right here."
+  - "I doubt she\u2019s thinking of me now. I don\u2019t know if I would be thinking
+    of her if I stayed home today."
+  - And yet we were friends.
+  - I wonder if we could have become real friends someday. Her and Cindy were real
+    friends.
+  - She still has post-its from Cindy hung on her cubicle.
+  - How many times did she replay that tragedy in her mind?
+  - ... I wonder if she feels comforted by the end of things.
+  - 'I wonder if I feel that way. '
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

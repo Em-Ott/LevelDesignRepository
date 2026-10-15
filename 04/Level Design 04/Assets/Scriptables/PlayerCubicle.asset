@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: PlayerCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "My cubicle\u2026"
+  - "It\u2019s ironic\u2026 The last to join, and the last to stay\u2026"
+  - At some point I loved my job. At some point I hated it.
+  - At some point I learned to be okay with it.
+  - Everyone on the team made this job worthwhile. I think I never would have been
+    able to tolerate this job without them.
+  - Sometimes I forget that I take life for granted, and all I did was complain.
+  - "That was something Marcy didn\u2019t like about me."
+  - Even Dan.
+  - But now, every painstakingly long meeting, every time I worked overtime, every
+    awkward moment, even now, I miss them.
+  - A couple of years ago, if someone would have told me this was the future waiting
+    for us, I would have made a snarky comment.
+  - "But here we are\u2026"
+  - "With nothing more to do, but wait for the end\u2026 "
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}

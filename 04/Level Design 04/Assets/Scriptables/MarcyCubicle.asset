@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: MarcyCubicle
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - Marcy and I dated once. I always thought having an office romance would be exciting,
+    that we would sneak glances to each other and smile about secrets only we were
+    privy to.
+  - Instead, it was just awkward.
+  - It was strange to run into someone I had just gone on a first date with the next
+    morning during our briefing.
+  - "It felt like we were invading each other\u2019s privacy."
+  - "After she told me we couldn\u2019t keep seeing each other, we didn\u2019t talk
+    much. We caught these little glimpses of each other\u2019s life during a brief
+    vulnerability, and then nothing"
+  - I know she would usually spend her mornings going on a run and watching the sunrise.
+    I wonder if she did that today, if it felt different knowing it was the last
+    time she would ever see the sun go up.
+  - "I wish I\u2019d tried running in the morning. It\u2019s too late now.  "
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}
