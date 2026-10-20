@@ -9,9 +9,16 @@ public class MirrorShard : MonoBehaviour
     private bool firstTime;
     private GameObject glass;
     private GameObject mirrorGlass;
+    private bool alive;
 
     [SerializeField]
     GameObject tutorialText;
+
+    [SerializeField]
+    GameObject ghost;
+
+    [SerializeField]
+    GameObject deadText;
 
     private Keyboard keyboard;
 
@@ -23,10 +30,11 @@ public class MirrorShard : MonoBehaviour
         holding = false;
         mirrorRange = false;
         firstTime = true;
+        alive = true;
     }
 
     void Update() {
-        if (keyboard.eKey.wasPressedThisFrame) {
+        if (keyboard.eKey.wasPressedThisFrame && alive) {
             if (canPickup && !holding) {
                 glass.SetActive(false);
                 holding = true;
@@ -37,12 +45,13 @@ public class MirrorShard : MonoBehaviour
             } else if (mirrorRange && holding) {
                 mirrorGlass.SetActive(true);
                 holding = false;
+                ghost.GetComponent<Ghost>().ChangePhase();
             }
         }
     }
 
     void OnTriggerEnter (Collider collider) {
-        if (collider.gameObject.CompareTag("Glass")) {
+        if (collider.gameObject.CompareTag("Glass") && alive) {
             if (!holding) {
                 canPickup = true;
                 glass = collider.gameObject;
@@ -51,16 +60,21 @@ public class MirrorShard : MonoBehaviour
                     tutorialText.SetActive(true);
                 }
             }
-        } else if (collider.gameObject.CompareTag("Mirror")) {
+        } else if (collider.gameObject.CompareTag("Mirror") && alive) {
             mirrorRange = true;
         }
     }
 
     void OnTriggerExit (Collider collider) {
-        if (collider.gameObject.CompareTag("Glass")) {
+        if (collider.gameObject.CompareTag("Glass") && alive) {
             canPickup = false;
-        } else if (collider.gameObject.CompareTag("Mirror")) {
+        } else if (collider.gameObject.CompareTag("Mirror") && alive) {
             mirrorRange = false;
         }
+    }
+
+    public void Dead() {
+        alive = false;
+        deadText.SetActive(true);
     }
 }
