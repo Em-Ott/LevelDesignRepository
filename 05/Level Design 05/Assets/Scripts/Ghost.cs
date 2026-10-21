@@ -19,6 +19,9 @@ public class Ghost : MonoBehaviour
     [SerializeField]
     GameObject fixedMirror;
 
+    [SerializeField]
+    GameObject mirroredPlayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,6 +53,7 @@ public class Ghost : MonoBehaviour
                 brokenMirror.SetActive(false);
                 fixedMirror.SetActive(true);
                 gameObject.SetActive(false);
+                mirroredPlayer.SetActive(true);
             }
         }
     }
