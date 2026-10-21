@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a9dd75b14f64f43a98b9b523c7ac90, type: 3}
+  m_Name: OpeningMonologue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  _concurrentDialogue:
+  - "Sigh\u2026. "
+  - "My client seems to have a very\u2026 witchy theme going on\u2026 "
+  - 'I wonder what was summoned this time? '
+  - "I should really start charging more for these exorcizing services, more so if
+    they can get\u2026 dangerous\u2026 "
+  - "\u2026 "
+  - 'I should start looking for the missing mirror shards in this bathroom. '
+  - 'From the look of the area, and what my client told me, it seems like a mirror
+    ghost.  '
+  - 'Once I find all of the shards and place it back on the mirror frame, it should
+    fully expel the ghost, and the mirror should go back to normal. '
+  - "Better start looking quickly\u2026 "
+  _characterName: You
+  _nextDialogue: {fileID: 0}
+  _choices: {fileID: 0}
