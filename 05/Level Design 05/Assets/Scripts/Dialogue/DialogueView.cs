@@ -17,7 +17,7 @@ public class DialogueView : MonoBehaviour
     private bool _playerDoneWithDialogue;
     private int _playerMadeChoice;
 
-    void Start()
+    void Awake()
     {
         _mouseClickAction = InputSystem.actions.FindAction("Attack");
         _mouseClickAction.performed += NextDialogue;

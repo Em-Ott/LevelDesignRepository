@@ -21,11 +21,6 @@ public class PlayerMove : MonoBehaviour
         _movementAction.performed += HandleMovement;
         _mouseLookAction.performed += HandleCameraMove;
         _movementAction.canceled += HandleMovement;
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
         _rigidBody = GetComponentInChildren<Rigidbody>();
         if (!_rigidBody) { Debug.Log("Please attach a rigidbody to player."); }
         _playerTransform = _rigidBody.transform;

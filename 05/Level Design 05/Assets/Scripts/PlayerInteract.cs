@@ -13,6 +13,8 @@ public class PlayerInteract : MonoBehaviour
     private PlayerMove _move;
     [SerializeField]
     private PlayerLookFPov _look;
+    [SerializeField]
+    private DialogueObject _startingDialogue;
     private InputAction _interactAction;
     private bool _inDialogue;
 
@@ -22,6 +24,11 @@ public class PlayerInteract : MonoBehaviour
         _interactAction = InputSystem.actions.FindAction("Interact");
         _inDialogue = false;
         _interactAction.performed += HandleInteract;
+
+        if (_startingDialogue != null)
+        {
+            _ = HandleFlagChange(_startingDialogue);
+        }
     }
 
     void HandleInteract(InputAction.CallbackContext lookInformation)
@@ -53,17 +60,17 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            _ = HandleFlagChange(highestPriorityObject);
+            _ = HandleFlagChange(highestPriorityObject.Dialogue);
             highestPriorityObject.Read = true;
         }
     }
 
-    async Task HandleFlagChange(DialogueInstance currentInstance)
+    async Task HandleFlagChange(DialogueObject currentObject)
     {
         _inDialogue = true;
         _move.AllowMove(false);
         _look.AllowLook(false);
-        await _view.OnStartDialogue(currentInstance.Dialogue);
+        await _view.OnStartDialogue(currentObject);
         _move.AllowMove(true);
         _look.AllowLook(true);
         _inDialogue = false;
