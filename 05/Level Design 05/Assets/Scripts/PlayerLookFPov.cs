@@ -17,6 +17,8 @@ public class PlayerLookFPov : MonoBehaviour
     private Camera _playerCamera;
     [SerializeField]
     private Transform _playerTransform;
+    [SerializeField]
+    private Transform _mirrorPlayer;
     private Transform _cameraTransform;
     private InputAction _mouseLookAction;
     private float yaw;
@@ -51,10 +53,12 @@ public class PlayerLookFPov : MonoBehaviour
     public void HandleMouseLook(float pitch, float yaw)
     {
         Quaternion playerRotation = Quaternion.Euler(0, yaw, 0);
+        Quaternion mirrorRotation = Quaternion.Euler(0, -yaw, 0);
         Quaternion cameraRotation = Quaternion.Euler(pitch, 0, 0);
 
         _playerTransform.rotation = playerRotation;
         _cameraTransform.localRotation = cameraRotation;
+        _mirrorPlayer.rotation = mirrorRotation;
     }
 
     // Returns where the mouse is looking at

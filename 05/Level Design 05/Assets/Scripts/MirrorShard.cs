@@ -8,8 +8,11 @@ public class MirrorShard : MonoBehaviour
     private bool mirrorRange;
     private bool firstTime;
     private GameObject glass;
+    private GameObject nextGlass;
     private GameObject mirrorGlass;
+    private GameObject nextMirrorGlass;
     private GameObject glassBack;
+    private GameObject nextGlassBack;
     private bool alive;
     private bool toiletAvailable;
     private bool canToilet;
@@ -50,6 +53,9 @@ public class MirrorShard : MonoBehaviour
     void Update() {
         if (keyboard.eKey.wasPressedThisFrame && alive) {
             if (canPickup && !holding) {
+                glass = nextGlass;
+                mirrorGlass = nextMirrorGlass;
+                glassBack = nextGlassBack;
                 glass.SetActive(false);
                 holding = true;
                 if (firstTime) {
@@ -75,14 +81,12 @@ public class MirrorShard : MonoBehaviour
         if (collider.gameObject.CompareTag("Toilet") && toiletAvailable) {
             canToilet = true;
         } else if (collider.gameObject.CompareTag("Glass") && alive) {
-            if (!holding) {
-                canPickup = true;
-                glass = collider.gameObject;
-                mirrorGlass = collider.gameObject.GetComponent<GlassPiece>().GetGlass();
-                glassBack = collider.gameObject.GetComponent<GlassPiece>().GetGlassBack();
-                if (firstTime) {
-                    tutorialText.SetActive(true);
-                }
+            canPickup = true;
+            nextGlass = collider.gameObject;
+            nextMirrorGlass = collider.gameObject.GetComponent<GlassPiece>().GetGlass();
+            nextGlassBack = collider.gameObject.GetComponent<GlassPiece>().GetGlassBack();
+            if (firstTime) {
+                tutorialText.SetActive(true);
             }
         } else if (collider.gameObject.CompareTag("Mirror") && alive) {
             mirrorRange = true;
