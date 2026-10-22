@@ -250,14 +250,14 @@ PrefabInstance:
     - target: {fileID: -497225568183085001, guid: 405c6e2b4b5c4a845a8a1d769f1e73b9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5e7a122b6efb68a47a9982e7ec4b0e04, type: 2}
+      objectReference: {fileID: 2100000, guid: 56ef5a547dc46f54597ac9b50b0181d4, type: 2}
     - target: {fileID: 919132149155446097, guid: 405c6e2b4b5c4a845a8a1d769f1e73b9, type: 3}
       propertyPath: m_Name
       value: DOE Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 405c6e2b4b5c4a845a8a1d769f1e73b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 405c6e2b4b5c4a845a8a1d769f1e73b9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
