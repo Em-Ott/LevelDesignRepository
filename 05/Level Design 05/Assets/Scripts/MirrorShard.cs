@@ -9,6 +9,7 @@ public class MirrorShard : MonoBehaviour
     private bool firstTime;
     private GameObject glass;
     private GameObject mirrorGlass;
+    private GameObject glassBack;
     private bool alive;
     private bool toiletAvailable;
     private bool canToilet;
@@ -57,6 +58,7 @@ public class MirrorShard : MonoBehaviour
                 }
             } else if (mirrorRange && holding) {
                 mirrorGlass.SetActive(true);
+                glassBack.SetActive(false);
                 holding = false;
                 ghost.GetComponent<Ghost>().ChangePhase();
             } else if (canToilet) {
@@ -70,19 +72,20 @@ public class MirrorShard : MonoBehaviour
     }
 
     void OnTriggerEnter (Collider collider) {
-        if (collider.gameObject.CompareTag("Glass") && alive) {
+        if (collider.gameObject.CompareTag("Toilet") && toiletAvailable) {
+            canToilet = true;
+        } else if (collider.gameObject.CompareTag("Glass") && alive) {
             if (!holding) {
                 canPickup = true;
                 glass = collider.gameObject;
                 mirrorGlass = collider.gameObject.GetComponent<GlassPiece>().GetGlass();
+                glassBack = collider.gameObject.GetComponent<GlassPiece>().GetGlassBack();
                 if (firstTime) {
                     tutorialText.SetActive(true);
                 }
             }
         } else if (collider.gameObject.CompareTag("Mirror") && alive) {
             mirrorRange = true;
-        } else if (collider.gameObject.CompareTag("Toilet") && toiletAvailable) {
-            canToilet = true;
         }
     }
 
