@@ -3,9 +3,6 @@ using UnityEngine;
 public class Ghost : MonoBehaviour
 {
     private int phase;
-    public float start = -1.0F;
-    public float end =  1.0F;
-    static float t = 0.0f;
 
     [SerializeField]
     GameObject ghostLight;
@@ -25,20 +22,22 @@ public class Ghost : MonoBehaviour
     [SerializeField]
     GameObject light;
 
+    private Vector3 target;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         phase = 1;
+        target = new Vector3(10.21f, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (phase == 3) {
-            transform.position = new Vector3(0.97974f, 2.54321f, 1.02928f + Mathf.Lerp(start, end, t));
+            transform.position = Vector3.MoveTowards(transform.position, target, 0.5f * Time.deltaTime);
 
-            t += 0.1f * Time.deltaTime;
-            if (t > 1.0f)
+            if (Vector3.Distance(transform.position, target) < 0.001f)
             {
                 GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<MirrorShard>().Dead();
                 phase = 0;

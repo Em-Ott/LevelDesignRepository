@@ -45,7 +45,7 @@ public class MirrorShard : MonoBehaviour
             } else if (mirrorRange && holding) {
                 mirrorGlass.SetActive(true);
                 holding = false;
-                //ghost.GetComponent<Ghost>().ChangePhase();
+                ghost.GetComponent<Ghost>().ChangePhase();
             }
         }
     }
