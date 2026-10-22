@@ -10,6 +10,8 @@ public class MirrorShard : MonoBehaviour
     private GameObject glass;
     private GameObject mirrorGlass;
     private bool alive;
+    private bool toiletAvailable;
+    private bool canToilet;
 
     [SerializeField]
     GameObject tutorialText;
@@ -19,6 +21,15 @@ public class MirrorShard : MonoBehaviour
 
     [SerializeField]
     GameObject deadText;
+
+    [SerializeField]
+    GameObject toiletDown;
+
+    [SerializeField]
+    GameObject toiletUp;
+
+    [SerializeField]
+    GameObject toiletShard;
 
     private Keyboard keyboard;
 
@@ -31,6 +42,8 @@ public class MirrorShard : MonoBehaviour
         mirrorRange = false;
         firstTime = true;
         alive = true;
+        canToilet = false;
+        toiletAvailable = true;
     }
 
     void Update() {
@@ -46,6 +59,12 @@ public class MirrorShard : MonoBehaviour
                 mirrorGlass.SetActive(true);
                 holding = false;
                 ghost.GetComponent<Ghost>().ChangePhase();
+            } else if (canToilet) {
+                toiletDown.SetActive(false);
+                toiletUp.SetActive(true);
+                toiletShard.SetActive(true);
+                toiletAvailable = false;
+                canToilet = false;
             }
         }
     }
@@ -62,6 +81,8 @@ public class MirrorShard : MonoBehaviour
             }
         } else if (collider.gameObject.CompareTag("Mirror") && alive) {
             mirrorRange = true;
+        } else if (collider.gameObject.CompareTag("Toilet") && toiletAvailable) {
+            canToilet = true;
         }
     }
 
@@ -70,6 +91,8 @@ public class MirrorShard : MonoBehaviour
             canPickup = false;
         } else if (collider.gameObject.CompareTag("Mirror") && alive) {
             mirrorRange = false;
+        } else if (collider.gameObject.CompareTag("Toilet") && toiletAvailable) {
+            canToilet = false;
         }
     }
 
