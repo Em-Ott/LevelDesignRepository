@@ -68,10 +68,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2327207433558839028, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 22619fc72c5e46d408ceabcd75243bcb, type: 2}
+    - target: {fileID: 4836325372867407071, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 22619fc72c5e46d408ceabcd75243bcb, type: 2}
+    - target: {fileID: 5407335156608980350, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 91701964636de704a9727795934719c5, type: 2}
     - target: {fileID: 5634794167159538834, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5854842276478847835, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 22619fc72c5e46d408ceabcd75243bcb, type: 2}
     - target: {fileID: 6089360667952041889, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
       propertyPath: m_Name
       value: doubledormroomdoorprefab
@@ -140,6 +156,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7888367609558673878, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 22619fc72c5e46d408ceabcd75243bcb, type: 2}
+    - target: {fileID: 9217776927885408907, guid: 3d37b1f22cb057b40bd1e26f9b0eda4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 22619fc72c5e46d408ceabcd75243bcb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

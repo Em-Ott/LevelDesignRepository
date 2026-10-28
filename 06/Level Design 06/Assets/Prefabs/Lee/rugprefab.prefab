@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rugprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6317578925029434746, guid: e5ceb4b255f7db5418c3d28aee86c7bb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5dc4d57c99dad77499ba87be1662b195, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: e5ceb4b255f7db5418c3d28aee86c7bb, type: 3}

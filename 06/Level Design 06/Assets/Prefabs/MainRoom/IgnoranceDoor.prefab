@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6511119035485363664}
     m_Modifications:
+    - target: {fileID: 4590740193031013012, guid: 29b9637181a88bd4c8da71ed687f814b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 22619fc72c5e46d408ceabcd75243bcb, type: 2}
     - target: {fileID: 4626431405899946363, guid: 29b9637181a88bd4c8da71ed687f814b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -100,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: singledormroomdoorprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6121735057133295902, guid: 29b9637181a88bd4c8da71ed687f814b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 91701964636de704a9727795934719c5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
