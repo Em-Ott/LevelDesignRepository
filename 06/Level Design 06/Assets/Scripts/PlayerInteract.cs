@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerInteract : MonoBehaviour
     private float _photoRange;
     [SerializeField]
     private float _photoHoldTime;
+    [SerializeField]
+    private GameObject _photoPrompt;
+    [SerializeField]
+    private Image _photoProgress;
     private InputAction _interactAction;
     private bool _inDialogue;
     private bool _inPhoto;
@@ -41,9 +46,12 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (!_inDialogue && !_inPhoto && _interactAction.IsPressed()
+        Photo photo = null;
+        bool canEnterPhoto = !_inDialogue && !_inPhoto
             && Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit, _photoRange)
-            && hit.collider.TryGetComponent(out Photo photo))
+            && hit.collider.TryGetComponent(out photo);
+
+        if (canEnterPhoto && _interactAction.IsPressed())
         {
             _holdTimer += Time.deltaTime;
             if (_holdTimer >= _photoHoldTime)
@@ -55,6 +63,9 @@ public class PlayerInteract : MonoBehaviour
         {
             _holdTimer = 0;
         }
+
+        _photoPrompt.SetActive(canEnterPhoto && !_inPhoto);
+        _photoProgress.fillAmount = _holdTimer / _photoHoldTime;
     }
 
     void HandleInteract(InputAction.CallbackContext lookInformation)
