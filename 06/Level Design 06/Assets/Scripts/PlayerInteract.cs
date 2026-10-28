@@ -15,8 +15,16 @@ public class PlayerInteract : MonoBehaviour
     private PlayerLookFPov _look;
     [SerializeField]
     private DialogueObject _startingDialogue;
+    [SerializeField]
+    private Camera _camera;
+    [SerializeField]
+    private float _photoRange;
+    [SerializeField]
+    private float _photoHoldTime;
     private InputAction _interactAction;
     private bool _inDialogue;
+    private bool _inPhoto;
+    private float _holdTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +36,24 @@ public class PlayerInteract : MonoBehaviour
         if (_startingDialogue != null)
         {
             _ = HandleFlagChange(_startingDialogue);
+        }
+    }
+
+    void Update()
+    {
+        if (!_inDialogue && !_inPhoto && _interactAction.IsPressed()
+            && Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit, _photoRange)
+            && hit.collider.TryGetComponent(out Photo photo))
+        {
+            _holdTimer += Time.deltaTime;
+            if (_holdTimer >= _photoHoldTime)
+            {
+                _ = EnterPhoto(photo);
+            }
+        }
+        else
+        {
+            _holdTimer = 0;
         }
     }
 
@@ -74,5 +100,19 @@ public class PlayerInteract : MonoBehaviour
         _move.AllowMove(true);
         _look.AllowLook(true);
         _inDialogue = false;
+    }
+
+    async Task EnterPhoto(Photo photo)
+    {
+        _inPhoto = true;
+        _move.AllowMove(false);
+        _look.AllowLook(false);
+        await photo.FillView(_camera);
+        _look.SetLook(photo.PhotoCamera.transform.rotation);
+        transform.position += photo.PhotoCamera.transform.position - _camera.transform.position;
+        Destroy(photo.gameObject);
+        _move.AllowMove(true);
+        _look.AllowLook(true);
+        _inPhoto = false;
     }
 }

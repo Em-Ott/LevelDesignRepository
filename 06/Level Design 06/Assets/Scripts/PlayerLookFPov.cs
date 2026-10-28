@@ -48,6 +48,13 @@ public class PlayerLookFPov : MonoBehaviour
         _allowLook = allowed;
     }
 
+    public void SetLook(Quaternion rotation)
+    {
+        pitch = Mathf.DeltaAngle(0, rotation.eulerAngles.x);
+        yaw = rotation.eulerAngles.y;
+        HandleMouseLook(pitch, yaw);
+    }
+
     // Adjusts the rotation of the body off the given quaternion
     public void HandleMouseLook(float pitch, float yaw)
     {
