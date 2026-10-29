@@ -13,11 +13,14 @@ public class Photo : MonoBehaviour
     private float _moveTime;
     [SerializeField]
     private float _expandTime;
+    [SerializeField]
+    private float _glossFadeTime;
     public Camera PhotoCamera { get { return _photoCamera; } }
 
     public async Task FillView(Camera view)
     {
         transform.SetParent(null);
+        _ = FadeGloss();
         _photoCamera.fieldOfView = view.fieldOfView;
         _photoCamera.aspect = view.aspect;
 
@@ -27,6 +30,21 @@ public class Photo : MonoBehaviour
 
         await MoveTo(position, view.transform.rotation, viewSize * _holdSize, _moveTime);
         await MoveTo(position, view.transform.rotation, viewSize, _expandTime);
+    }
+
+    private async Task FadeGloss()
+    {
+        Material material = GetComponent<Renderer>().material;
+        Color specular = material.GetColor("_SpecColor");
+        float smoothness = material.GetFloat("_Smoothness");
+        float t = 0;
+        while (t < 1)
+        {
+            t = Mathf.Min(t + Time.deltaTime / _glossFadeTime, 1);
+            material.SetColor("_SpecColor", Color.Lerp(specular, Color.black, t));
+            material.SetFloat("_Smoothness", Mathf.Lerp(smoothness, 0, t));
+            await Awaitable.NextFrameAsync();
+        }
     }
 
     private async Task MoveTo(Vector3 position, Quaternion rotation, Vector3 scale, float time)
