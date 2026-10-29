@@ -582,6 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475987953997389992}
+  - component: {fileID: 8732164003375806032}
   m_Layer: 0
   m_Name: MovingDoor
   m_TagString: Untagged
@@ -611,6 +612,27 @@ Transform:
   - {fileID: 6142204501803829832}
   m_Father: {fileID: 4626431405899946363}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!65 &8732164003375806032
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262266593498626908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 7, z: 3.5}
+  m_Center: {x: 0, y: 3.5, z: -1.5}
 --- !u!1 &8702992112514572723
 GameObject:
   m_ObjectHideFlags: 0
