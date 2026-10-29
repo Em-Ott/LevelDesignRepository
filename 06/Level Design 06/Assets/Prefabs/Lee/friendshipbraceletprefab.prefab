@@ -48,10 +48,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7800081227138109666, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ba11c8a493a628b439654f6c31c4f943, type: 2}
+    - target: {fileID: -7791213209829967818, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ede413229e39fd448e628cd81c61e1c, type: 2}
+    - target: {fileID: -5979644050174933711, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 40d13e2e58ffe3f4fa7b1824babbd9da, type: 2}
+    - target: {fileID: -1990968323811559735, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 61ff9852f385d564592b198b17eead8e, type: 2}
     - target: {fileID: 919132149155446097, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
       propertyPath: m_Name
       value: friendshipbraceletprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1866521078252320733, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ac4d310f0103bc54d97b84ebd73861cc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 69729f8edfe482e4da45f57410b1454c, type: 3}
