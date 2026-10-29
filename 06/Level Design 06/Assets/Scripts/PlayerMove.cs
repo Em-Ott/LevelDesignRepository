@@ -8,18 +8,14 @@ public class PlayerMove : MonoBehaviour
     private float _moveSpeed;
     private Rigidbody _rigidBody;
     private InputAction _movementAction;
-    private InputAction _mouseLookAction;
     private Transform _playerTransform;
-    private Quaternion _previousPlayerRotation;
-    private Vector3 _currentVelocity = Vector3.zero;
+    private Vector2 _movementInput = Vector2.zero;
     private bool _allowMove = true;
 
     void Awake()
     {
         _movementAction = InputSystem.actions.FindAction("Move");
-        _mouseLookAction = InputSystem.actions.FindAction("Look");
         _movementAction.performed += HandleMovement;
-        _mouseLookAction.performed += HandleCameraMove;
         _movementAction.canceled += HandleMovement;
         _rigidBody = GetComponentInChildren<Rigidbody>();
         if (!_rigidBody) { Debug.Log("Please attach a rigidbody to player."); }
@@ -29,7 +25,9 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         if (!_allowMove) { return; }
-        _rigidBody.linearVelocity = _currentVelocity;
+        Vector3 forwardMovement = _playerTransform.forward * _movementInput.y * _moveSpeed;
+        Vector3 rightMovement = _playerTransform.right * _movementInput.x * _moveSpeed;
+        _rigidBody.linearVelocity = forwardMovement + rightMovement;
     }
 
     public void AllowMove(bool allowed)
@@ -41,34 +39,16 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    // Adjust velocity to match new playerTransform.forward, this may need to be adjusted depending on FPov, ThirdPoV, etc.
-    public void HandleCameraMove(InputAction.CallbackContext lookInformation)
-    {
-        if (_currentVelocity == Vector3.zero) { return; }
-
-        Quaternion rotationChange = _playerTransform.rotation * Quaternion.Inverse(_previousPlayerRotation);
-        _currentVelocity = rotationChange * _currentVelocity;
-        _previousPlayerRotation = _playerTransform.rotation;
-    }
-
-    // Adjusts the rigid bodies velocity off the given linear values
+    // Stores the latest movement input, velocity is applied relative to playerTransform in FixedUpdate
     public void HandleMovement(InputAction.CallbackContext movementInformation)
     {
         if (movementInformation.performed)
         {
-            Vector2 movementVector = movementInformation.ReadValue<Vector2>();
-            float xMovement = movementVector.x;
-            float zMovement = movementVector.y;
-
-            Vector3 forwardMovement = _playerTransform.forward * zMovement * _moveSpeed;
-            Vector3 rightMovement = _playerTransform.right * xMovement * _moveSpeed;
-            Vector3 movement = forwardMovement + rightMovement;
-
-            _currentVelocity = movement;
+            _movementInput = movementInformation.ReadValue<Vector2>();
         }
         else if (movementInformation.canceled)
         {
-            _currentVelocity = Vector3.zero;
+            _movementInput = Vector2.zero;
         }
     }
 }
