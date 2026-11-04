@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1414793686476042853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6199713481310922904}
+  m_Layer: 0
+  m_Name: Handrail (Left)
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6199713481310922904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414793686476042853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.059999943, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8191784077684458066}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2008042531226132194
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6199713481310922904}
+    m_Modifications:
+    - target: {fileID: 7006123898898548234, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_Name
+      value: elevatorhandleprefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+--- !u!4 &8191784077684458066 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7669929492362124464, guid: f53fbb6dd5b74e648941cbf3c2470aa1, type: 3}
+  m_PrefabInstance: {fileID: 2008042531226132194}
+  m_PrefabAsset: {fileID: 0}
