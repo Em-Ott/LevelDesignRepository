@@ -19,6 +19,12 @@ public class SoundEmitter : MonoBehaviour
 
     private readonly List<AudioSource> _sources = new List<AudioSource>();
     private readonly List<double> _busyUntil = new List<double>();
+    private readonly List<double> _startAt = new List<double>();
+    private readonly List<int> _pauseState = new List<int>();
+
+    private const int NotPaused = 0;
+    private const int PausedPlaying = 1;
+    private const int PausedPending = 2;
 
     public bool Spatial
     {
@@ -59,14 +65,63 @@ public class SoundEmitter : MonoBehaviour
 
     public AudioSource Schedule(AudioClip clip, float volume, double dspTime, AudioSource template)
     {
-        AudioSource source = Acquire(dspTime + clip.length + 0.1, template);
+        int index = Acquire(dspTime + clip.length + 0.1, template);
+        AudioSource source = _sources[index];
+        _startAt[index] = dspTime;
         source.clip = clip;
         source.volume = volume;
         source.PlayScheduled(dspTime);
         return source;
     }
 
-    private AudioSource Acquire(double busyUntil, AudioSource template)
+    public void PauseAll(double now)
+    {
+        for (int i = 0; i < _sources.Count; i++)
+        {
+            _pauseState[i] = NotPaused;
+            if (_busyUntil[i] <= now)
+            {
+                continue;
+            }
+
+            if (_startAt[i] > now)
+            {
+                _sources[i].Stop();
+                _pauseState[i] = PausedPending;
+            }
+            else if (_sources[i].isPlaying)
+            {
+                _sources[i].Pause();
+                _pauseState[i] = PausedPlaying;
+            }
+        }
+    }
+
+    public void ResumeAll(double shift)
+    {
+        for (int i = 0; i < _sources.Count; i++)
+        {
+            if (_pauseState[i] == NotPaused)
+            {
+                continue;
+            }
+
+            _startAt[i] += shift;
+            _busyUntil[i] += shift;
+            if (_pauseState[i] == PausedPending)
+            {
+                _sources[i].PlayScheduled(_startAt[i]);
+            }
+            else
+            {
+                _sources[i].UnPause();
+            }
+
+            _pauseState[i] = NotPaused;
+        }
+    }
+
+    private int Acquire(double busyUntil, AudioSource template)
     {
         double now = AudioSettings.dspTime;
         for (int i = 0; i < _sources.Count; i++)
@@ -75,7 +130,7 @@ public class SoundEmitter : MonoBehaviour
             {
                 _busyUntil[i] = busyUntil;
                 Configure(_sources[i], template);
-                return _sources[i];
+                return i;
             }
         }
 
@@ -83,7 +138,9 @@ public class SoundEmitter : MonoBehaviour
         Configure(source, template);
         _sources.Add(source);
         _busyUntil.Add(busyUntil);
-        return source;
+        _startAt.Add(0);
+        _pauseState.Add(NotPaused);
+        return _sources.Count - 1;
     }
 
     private void Configure(AudioSource source, AudioSource template)

@@ -44,16 +44,21 @@ public class SoundsManager : MonoBehaviour
     [SerializeField] private float _startDelay = 1.5f;
     [SerializeField] private bool _waitForInputOnWeb = true;
     [SerializeField] private float _scheduleAhead = 1f;
+    [SerializeField] private Key _pauseKey = Key.B;
     [SerializeField] private List<SoundCue> _cues = new List<SoundCue>();
     [SerializeField] private List<SequenceEvent> _events = new List<SequenceEvent>();
 
     private SoundEmitter[] _emitters;
     private double _startDspTime;
     private bool _started;
+    private bool _paused;
+    private double _pauseDspTime;
+    private float _timeScaleBeforePause = 1f;
 
     public bool Started => _started;
+    public bool Paused => _paused;
     public bool Finished { get; private set; }
-    public float SequenceTime => _started ? (float)(AudioSettings.dspTime - _startDspTime) : 0f;
+    public float SequenceTime => _started ? (float)((_paused ? _pauseDspTime : AudioSettings.dspTime) - _startDspTime) : 0f;
 
     void Start()
     {
@@ -83,6 +88,12 @@ public class SoundsManager : MonoBehaviour
 
     void Update()
     {
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard != null && _pauseKey != Key.None && keyboard[_pauseKey].wasPressedThisFrame)
+        {
+            SetPaused(!_paused);
+        }
+
         if (!_started)
         {
             return;
@@ -93,6 +104,46 @@ public class SoundsManager : MonoBehaviour
         {
             emitter.Follow(time);
         }
+    }
+
+    public void SetPaused(bool paused)
+    {
+        if (paused == _paused)
+        {
+            return;
+        }
+
+        if (paused)
+        {
+            _pauseDspTime = AudioSettings.dspTime;
+            foreach (SoundEmitter emitter in _emitters)
+            {
+                emitter.PauseAll(_pauseDspTime);
+            }
+
+            _timeScaleBeforePause = Time.timeScale;
+            Time.timeScale = 0f;
+            _paused = true;
+            Debug.Log($"[SoundsManager] - paused at {SequenceTime:0.00}s");
+        }
+        else
+        {
+            double shift = AudioSettings.dspTime - _pauseDspTime;
+            _startDspTime += shift;
+            foreach (SoundEmitter emitter in _emitters)
+            {
+                emitter.ResumeAll(shift);
+            }
+
+            Time.timeScale = _timeScaleBeforePause;
+            _paused = false;
+            Debug.Log($"[SoundsManager] - resumed at {SequenceTime:0.00}s");
+        }
+    }
+
+    void OnDisable()
+    {
+        SetPaused(false);
     }
 
     private IEnumerator PlaySequence()

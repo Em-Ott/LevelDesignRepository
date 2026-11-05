@@ -10,8 +10,12 @@ public class VoiceOverManager : MonoBehaviour
     [SerializeField] private Color _killerColor = new Color(0.82f, 0.2f, 0.16f, 1f);
     [SerializeField] private float _subtitleTailTrim = 1.2f;
 
+    private SoundsManager _manager;
+
     private void Awake()
     {
+        _manager = GetComponentInParent<SoundsManager>();
+
         if (VCSource == null)
         {
             VCSource = GetComponentInChildren<AudioSource>();
@@ -43,7 +47,7 @@ public class VoiceOverManager : MonoBehaviour
 
     private IEnumerator ShowSubtitle(SoundCue cue, double dspTime, SequenceEffects effects)
     {
-        while (AudioSettings.dspTime < dspTime)
+        while (_manager != null ? !_manager.Started || _manager.SequenceTime < cue.Time : AudioSettings.dspTime < dspTime)
         {
             yield return null;
         }
