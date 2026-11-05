@@ -1,14 +1,9 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
-    [SerializeField] private List<AudioClip> SFXList;
     [SerializeField] public AudioSource SFXSource;
-    public Queue<AudioClip> SFXQueue;
-    public bool Finished;
-
+    [SerializeField] private SoundEmitter _defaultEmitter;
 
     private void Awake()
     {
@@ -16,38 +11,23 @@ public class SFXManager : MonoBehaviour
         {
             SFXSource = GetComponentInChildren<AudioSource>();
         }
-        SFXQueue = new Queue<AudioClip>();
 
-        foreach (AudioClip audio in SFXList)
+        if (_defaultEmitter == null)
         {
-            SFXQueue.Enqueue(audio);
+            _defaultEmitter = GetComponent<SoundEmitter>();
         }
 
-        Finished = false;
+        if (_defaultEmitter == null)
+        {
+            _defaultEmitter = gameObject.AddComponent<SoundEmitter>();
+            _defaultEmitter.Spatial = false;
+        }
     }
 
-
-    public void PlayClip()
+    public void Play(SoundCue cue, double dspTime)
     {
-        if (SFXQueue.Count != 0)
-        {
-            SFXSource.clip = SFXQueue.Dequeue();
-
-            if (SFXSource.clip != null)
-            {
-                Debug.Log($"[SFXSourceManager] - clip name - {SFXSource.clip.name}");
-                SFXSource.Play();
-            }
-            else
-            {
-                Debug.Log($"[SFXSourceManager] - hit end");
-            }
-        }
-        else
-        {
-            Finished = true;
-        }
+        SoundEmitter emitter = cue.Emitter != null ? cue.Emitter : _defaultEmitter;
+        emitter.Schedule(cue.Clip, cue.Volume, dspTime, SFXSource);
+        Debug.Log($"[SFXManager] - clip name - {cue.Clip.name} at {cue.Time:0.00}s");
     }
-
-
 }

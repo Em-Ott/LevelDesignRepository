@@ -26,6 +26,7 @@ public class PlayerLookFPov : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         _cameraTransform = _playerCamera.gameObject.transform;
         if (!_cameraTransform) { Debug.Log("Camera is missing a transform."); }
         // See Edit -> Project Settings -> Input Systems Package for actions
@@ -45,6 +46,13 @@ public class PlayerLookFPov : MonoBehaviour
     public void AllowLook(bool allowed)
     {
         _allowLook = allowed;
+    }
+
+    public void SetLook(Quaternion rotation)
+    {
+        pitch = Mathf.DeltaAngle(0, rotation.eulerAngles.x);
+        yaw = rotation.eulerAngles.y;
+        HandleMouseLook(pitch, yaw);
     }
 
     // Adjusts the rotation of the body off the given quaternion

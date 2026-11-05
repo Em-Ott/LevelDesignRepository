@@ -1,14 +1,14 @@
+using System.Collections;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class VoiceOverManager : MonoBehaviour
 {
-    [SerializeField] private List<AudioClip> VCList;
     [SerializeField] public AudioSource VCSource;
-    public Queue<AudioClip> VCQueue;
-    public bool Finished;
-
-
+    [SerializeField] private SoundEmitter _defaultEmitter;
+    [SerializeField] private bool _showSubtitles = true;
+    [SerializeField] private Color _victimColor = new Color(0.86f, 0.85f, 0.8f, 1f);
+    [SerializeField] private Color _killerColor = new Color(0.82f, 0.2f, 0.16f, 1f);
+    [SerializeField] private float _subtitleTailTrim = 1.2f;
 
     private void Awake()
     {
@@ -17,36 +17,39 @@ public class VoiceOverManager : MonoBehaviour
             VCSource = GetComponentInChildren<AudioSource>();
         }
 
-        VCQueue = new Queue<AudioClip>();
-
-
-        foreach (AudioClip audio in VCList)
+        if (_defaultEmitter == null)
         {
-            VCQueue.Enqueue(audio);
+            _defaultEmitter = GetComponent<SoundEmitter>();
         }
 
-        Finished = false;
+        if (_defaultEmitter == null)
+        {
+            _defaultEmitter = gameObject.AddComponent<SoundEmitter>();
+            _defaultEmitter.Spatial = false;
+        }
     }
 
-    public void PlayClip()
+    public void Play(SoundCue cue, double dspTime, SequenceEffects effects)
     {
-        if (VCQueue.Count != 0)
+        SoundEmitter emitter = cue.Emitter != null ? cue.Emitter : _defaultEmitter;
+        emitter.Schedule(cue.Clip, cue.Volume, dspTime, VCSource);
+        Debug.Log($"[VoiceOverManager] - clip name - {cue.Clip.name} at {cue.Time:0.00}s");
+
+        if (_showSubtitles && effects != null && !string.IsNullOrEmpty(cue.Subtitle))
         {
-            VCSource.clip = VCQueue.Dequeue();
-            if (VCSource.clip != null)
-            {
-                Debug.Log($"[VoiceOverManager] - clip name - {VCSource.clip.name}");
-                VCSource.Play();
-            }
-            else
-            {
-                Debug.Log($"[VoiceOverManager] - hit end");
-            }
-        }
-        else
-        {
-            Finished = true;
+            StartCoroutine(ShowSubtitle(cue, dspTime, effects));
         }
     }
 
+    private IEnumerator ShowSubtitle(SoundCue cue, double dspTime, SequenceEffects effects)
+    {
+        while (AudioSettings.dspTime < dspTime)
+        {
+            yield return null;
+        }
+
+        Color color = cue.Speaker == SubtitleSpeaker.Killer ? _killerColor : _victimColor;
+        float duration = Mathf.Max(1.5f, cue.Clip.length - _subtitleTailTrim);
+        effects.ShowSubtitle(cue.Subtitle, color, duration);
+    }
 }

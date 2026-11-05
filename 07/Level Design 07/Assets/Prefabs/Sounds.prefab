@@ -1,0 +1,1705 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &457715936288456987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8558643986855266383}
+  - component: {fileID: 1447390391765575908}
+  m_Layer: 0
+  m_Name: Ceiling Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8558643986855266383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457715936288456987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1447390391765575908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457715936288456987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
+--- !u!1 &684179849224133659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7072530456889270798}
+  m_Layer: 0
+  m_Name: Emitters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7072530456889270798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684179849224133659}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7658529213656847531}
+  - {fileID: 5132589483257152643}
+  - {fileID: 4133785953830071131}
+  - {fileID: 8558643986855266383}
+  - {fileID: 9181245936593311369}
+  - {fileID: 5850353580084276768}
+  - {fileID: 5626752073040211527}
+  m_Father: {fileID: 1523128806097109176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2232183409039872771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5132589483257152643}
+  - component: {fileID: 3689503627835179758}
+  m_Layer: 0
+  m_Name: Killer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5132589483257152643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232183409039872771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -30, y: 2.75, z: -3.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3689503627835179758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232183409039872771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path:
+  - Time: 0
+    Position: {x: -30, y: 2.75, z: -3.6}
+  - Time: 44
+    Position: {x: -30, y: 2.75, z: -3.6}
+  - Time: 52
+    Position: {x: -27, y: 2.75, z: -3.6}
+  - Time: 69.5
+    Position: {x: -17, y: 2.75, z: -3.6}
+  - Time: 81
+    Position: {x: -10, y: 2.75, z: -3.6}
+  - Time: 89
+    Position: {x: -6, y: 2.75, z: -3.5}
+  - Time: 100.5
+    Position: {x: -1.2, y: 2.75, z: -3.1}
+  - Time: 108
+    Position: {x: 0.9, y: 2.75, z: -3}
+  - Time: 111.6
+    Position: {x: 1.4, y: 2.75, z: -2.9}
+  - Time: 116.4
+    Position: {x: 1.7, y: 2.7, z: -3}
+  - Time: 119.6
+    Position: {x: 3.6, y: 2.7, z: -3.6}
+  - Time: 121.4
+    Position: {x: 3.4, y: 2.75, z: -3.5}
+  - Time: 127.8
+    Position: {x: 0.25, y: 2.75, z: -2.25}
+--- !u!1 &2766915181566000054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2210160600773073855}
+  - component: {fileID: 6314361859390038574}
+  - component: {fileID: 211407749571086523}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2210160600773073855
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766915181566000054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6376062293663668401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6314361859390038574
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766915181566000054}
+  m_CullTransparentMesh: 1
+--- !u!114 &211407749571086523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766915181566000054}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3468692537467970899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523128806097109176}
+  - component: {fileID: 6969289859830721611}
+  m_Layer: 0
+  m_Name: Sounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1523128806097109176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468692537467970899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7785461266105923963}
+  - {fileID: 2227914437888892742}
+  - {fileID: 3003521691220717797}
+  - {fileID: 7072530456889270798}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6969289859830721611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468692537467970899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89ecf6247052481384546ce60bca421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundsManager
+  VCManager: {fileID: 8926376248854622649}
+  SFXManager: {fileID: 6242459946871192886}
+  _effects: {fileID: 1211824765523074830}
+  _startDelay: 1.5
+  _waitForInputOnWeb: 1
+  _scheduleAhead: 1
+  _cues:
+  - Name: Elevator Ride
+    Time: 0
+    Clip: {fileID: 8300000, guid: b4a3028f2124f00408d86e7faa0c9426, type: 3}
+    Channel: 0
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Light Buzz
+    Time: 0
+    Clip: {fileID: 8300000, guid: 21089e92f63100c47a2e810dadd12729, type: 3}
+    Channel: 0
+    Emitter: {fileID: 1447390391765575908}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Power Failure
+    Time: 10.75
+    Clip: {fileID: 8300000, guid: a09c0f0b32c1e9f48ab4c528832285ff, type: 3}
+    Channel: 1
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Stuck Room Tone
+    Time: 11.2
+    Clip: {fileID: 8300000, guid: a3ef6cb54c742954bb5446d5d9a16c8c, type: 3}
+    Channel: 0
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Cab Creak 1
+    Time: 14.3
+    Clip: {fileID: 8300000, guid: 70bc1fe53df225140933fd912eb51544, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6671103195144482509}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Cab Creak 2
+    Time: 21.4
+    Clip: {fileID: 8300000, guid: 4779e9d06c178c24ab4544b59a636e40, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6671103195144482509}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Tension Drone
+    Time: 26
+    Clip: {fileID: 8300000, guid: fa6b570f9b222ac4a98a047c5958cdaf, type: 3}
+    Channel: 3
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: V01_IsThatAWeapon
+    Time: 27
+    Clip: {fileID: 8300000, guid: caebffb685503704cafde21610b54670, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: "Is that\u2026 a weapon? It looks like\u2026 oh God, it's an ax!"
+  - Name: Door Slam Far
+    Time: 35.55
+    Clip: {fileID: 8300000, guid: 07b5342a9ee9db74cb496f1c97980b3d, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: V02_AmISafeNow
+    Time: 38.6
+    Clip: {fileID: 8300000, guid: 0b616dfb2d6026a4da22a19c77fb49f7, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: "I don't see anyone anymore\u2026 am I safe now?"
+  - Name: Killer Footsteps Approach
+    Time: 44
+    Clip: {fileID: 8300000, guid: c8d17159ab343ce4a83e2091922997fa, type: 3}
+    Channel: 1
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: V03_AreThoseFootsteps
+    Time: 47.2
+    Clip: {fileID: 8300000, guid: b14bf5d979b11e245ba49bc8d8680705, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: "Are those\u2026 footsteps?"
+  - Name: K04_ComeBackHere
+    Time: 52
+    Clip: {fileID: 8300000, guid: 97e9a19c973c4fb4f979c42626bc4bda, type: 3}
+    Channel: 2
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 2
+    Subtitle: "Come back heeeeere\u2026"
+  - Name: V05_NoNoNo
+    Time: 55.5
+    Clip: {fileID: 8300000, guid: 9719ecc44d48bc34da8d8b3fce225109, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: No, no, no, it can't be!
+  - Name: Victim Runs To Elevator
+    Time: 58
+    Clip: {fileID: 8300000, guid: e6f321140b45ddd40a08bd48fa8f7943, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: V06_TheElevator
+    Time: 62.25
+    Clip: {fileID: 8300000, guid: d7a7512f990aca84ab9d1c312cccba4d, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: "The elevator! I can get out! What the\u2014 why aren't the buttons
+      working?"
+  - Name: Call Buttons
+    Time: 64.1
+    Clip: {fileID: 8300000, guid: 6017dbeb1f932c14a920170136ffe333, type: 3}
+    Channel: 1
+    Emitter: {fileID: 7074226435818142700}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: K07_NoNeedToRun
+    Time: 69.5
+    Clip: {fileID: 8300000, guid: 75422903e7630064e9a19bdf2eb72616, type: 3}
+    Channel: 2
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 2
+    Subtitle: "No need to run\u2026"
+  - Name: Banging On Doors
+    Time: 73
+    Clip: {fileID: 8300000, guid: bf1213ab4a997a44287e3cd500f17ec5, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8216980626228494347}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: V08_HelpMe
+    Time: 73.7
+    Clip: {fileID: 8300000, guid: a8b497a1a781e524ba80debc1bf72d32, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: Help! Help me! Can anyone hear me?
+  - Name: K09_ItsForYourOwnGood
+    Time: 81
+    Clip: {fileID: 8300000, guid: aff8e869e3ab171438b508a06a695d70, type: 3}
+    Channel: 2
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 2
+    Subtitle: It's for your own good.
+  - Name: V10_ItCantBe
+    Time: 85
+    Clip: {fileID: 8300000, guid: e9a23fa3c94b0924c812479ab27c4f54, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: Ah! No! It can't be!
+  - Name: Victim Crying
+    Time: 87.6
+    Clip: {fileID: 8300000, guid: ab0cb831b3e9f184e817c961b75461e1, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: K10_NoOneIsComing
+    Time: 89
+    Clip: {fileID: 8300000, guid: 17560fae5a6f8024fac23fbd3221e491, type: 3}
+    Channel: 2
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 2
+    Subtitle: No one is coming to help you.
+  - Name: V11_StayAway
+    Time: 93.5
+    Clip: {fileID: 8300000, guid: 5e0e0ba9669d37a419f3479090e7f2bb, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: No! Stay away! I haven't done anything!
+  - Name: K12_ThatsWhatEveryoneSays
+    Time: 100.5
+    Clip: {fileID: 8300000, guid: 17532fc1fe5542f46a6829d6202d0689, type: 3}
+    Channel: 2
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 2
+    Subtitle: That's what everyone says.
+  - Name: V13_PleaseDontKillMe
+    Time: 104.5
+    Clip: {fileID: 8300000, guid: a615c76270097194caf6c9fd8c75ece2, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 1
+    Subtitle: Please don't kill me!
+  - Name: K14_WhyWouldIListen
+    Time: 108
+    Clip: {fileID: 8300000, guid: 67bdb96b81bda96449fb6d5d47874b21, type: 3}
+    Channel: 2
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 2
+    Subtitle: And why would I listen to that?
+  - Name: Ax Kill
+    Time: 111.6
+    Clip: {fileID: 8300000, guid: 8e83dfc94aecce149a531ee066230c4d, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8708767625550828086}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Body Drag
+    Time: 116.4
+    Clip: {fileID: 8300000, guid: ae7737d495a168641a859a74a9063be2, type: 3}
+    Channel: 1
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Heartbeat
+    Time: 121
+    Clip: {fileID: 8300000, guid: 7436404ea09e78142b6b439b83c78d16, type: 3}
+    Channel: 3
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Killer Footsteps Return
+    Time: 121.4
+    Clip: {fileID: 8300000, guid: 7b43916dff6604e4ab70ed11d8d95710, type: 3}
+    Channel: 1
+    Emitter: {fileID: 3689503627835179758}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Knock Knock
+    Time: 128.6
+    Clip: {fileID: 8300000, guid: 477b7b13d6e250d47a97568555a2c757, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8216980626228494347}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: K15_IKnowYoureInThere
+    Time: 131
+    Clip: {fileID: 8300000, guid: 4b9183e16eca8c144bfd798898b64970, type: 3}
+    Channel: 2
+    Emitter: {fileID: 8216980626228494347}
+    Volume: 1
+    Speaker: 2
+    Subtitle: I know you're in there.
+  - Name: Dread Hit
+    Time: 133.55
+    Clip: {fileID: 8300000, guid: a23e16e1663050a438d8d959dce5d0a7, type: 3}
+    Channel: 3
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Doors Pried Open
+    Time: 134.5
+    Clip: {fileID: 8300000, guid: 9fd54cfeb3f104447a5aa799a1d555b2, type: 3}
+    Channel: 1
+    Emitter: {fileID: 8216980626228494347}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Riser
+    Time: 138.8
+    Clip: {fileID: 8300000, guid: 555aaf5b2a2843645860fbca949c8aa9, type: 3}
+    Channel: 3
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 1
+    Time: 140
+    Clip: {fileID: 8300000, guid: 11c0351486a87d6488ac7e7d1f7b2f06, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 2
+    Time: 142.5
+    Clip: {fileID: 8300000, guid: 38d7fb21de4883f479904265125d2936, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 3
+    Time: 144.6
+    Clip: {fileID: 8300000, guid: 44bf529d4ee2d7a42b968da69c6407bc, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 4
+    Time: 146.4
+    Clip: {fileID: 8300000, guid: bcc43c49c0a109a4fa2de46891970ea3, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 5
+    Time: 147.9
+    Clip: {fileID: 8300000, guid: 8d7c566c75fe5bc459f235d5183071e8, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 6
+    Time: 149.2
+    Clip: {fileID: 8300000, guid: fe1869c0d29567944bee54eda95383f4, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ax Strike 7
+    Time: 150.3
+    Clip: {fileID: 8300000, guid: af1ca74582afec84586dc72c95894572, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Cable Snaps
+    Time: 151.2
+    Clip: {fileID: 8300000, guid: 48d9326401542594f988692ad774244b, type: 3}
+    Channel: 1
+    Emitter: {fileID: 6602362567177829209}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Elevator Falls
+    Time: 151.45
+    Clip: {fileID: 8300000, guid: 618149fe0d4ead44c9a27f4eda4603a5, type: 3}
+    Channel: 1
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Impact
+    Time: 158
+    Clip: {fileID: 8300000, guid: 08057a3165dc2b24abe006f5d16bd55c, type: 3}
+    Channel: 1
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  - Name: Ringing
+    Time: 158.15
+    Clip: {fileID: 8300000, guid: 9c3f2a4ec6ce5ca4aafb049645106e0d, type: 3}
+    Channel: 3
+    Emitter: {fileID: 0}
+    Volume: 1
+    Speaker: 0
+    Subtitle: 
+  _events:
+  - Name: Power Fail Jolt
+    Time: 10.78
+    Type: 0
+    Duration: 0.9
+    Strength: 0.85
+    Seed: 0
+  - Name: Power Fail Flicker
+    Time: 10.9
+    Type: 1
+    Duration: 1.9
+    Strength: 0.8
+    Seed: 11
+  - Name: Cab Settles
+    Time: 14.35
+    Type: 0
+    Duration: 0.7
+    Strength: 0.16
+    Seed: 0
+  - Name: Body Hits Floor
+    Time: 113.6
+    Type: 0
+    Duration: 0.35
+    Strength: 0.12
+    Seed: 0
+  - Name: Doors Give Way
+    Time: 138.5
+    Type: 0
+    Duration: 0.4
+    Strength: 0.2
+    Seed: 0
+  - Name: Strike 1
+    Time: 140
+    Type: 0
+    Duration: 0.45
+    Strength: 0.32
+    Seed: 0
+  - Name: Strike 2
+    Time: 142.5
+    Type: 0
+    Duration: 0.47
+    Strength: 0.37
+    Seed: 0
+  - Name: Strike 3
+    Time: 144.6
+    Type: 0
+    Duration: 0.49
+    Strength: 0.42
+    Seed: 0
+  - Name: Strike Flicker 3
+    Time: 144.62
+    Type: 1
+    Duration: 0.55
+    Strength: 0.5
+    Seed: 23
+  - Name: Strike 4
+    Time: 146.4
+    Type: 0
+    Duration: 0.51
+    Strength: 0.47
+    Seed: 0
+  - Name: Strike 5
+    Time: 147.9
+    Type: 0
+    Duration: 0.53
+    Strength: 0.52
+    Seed: 0
+  - Name: Strike Flicker 5
+    Time: 147.92
+    Type: 1
+    Duration: 0.7
+    Strength: 0.6
+    Seed: 31
+  - Name: Strike 6
+    Time: 149.2
+    Type: 0
+    Duration: 0.55
+    Strength: 0.57
+    Seed: 0
+  - Name: Strike Flicker 6
+    Time: 149.22
+    Type: 1
+    Duration: 0.8
+    Strength: 0.7
+    Seed: 37
+  - Name: Strike 7
+    Time: 150.3
+    Type: 0
+    Duration: 0.57
+    Strength: 0.62
+    Seed: 0
+  - Name: Strike Flicker 7
+    Time: 150.32
+    Type: 1
+    Duration: 0.75
+    Strength: 0.8
+    Seed: 41
+  - Name: Snap Flicker
+    Time: 151.2
+    Type: 1
+    Duration: 0.25
+    Strength: 0.9
+    Seed: 43
+  - Name: Cable Snaps
+    Time: 151.2
+    Type: 0
+    Duration: 0.6
+    Strength: 0.9
+    Seed: 0
+  - Name: Fall Flicker
+    Time: 151.45
+    Type: 1
+    Duration: 6.55
+    Strength: 0.78
+    Seed: 47
+  - Name: Falling 1
+    Time: 151.45
+    Type: 0
+    Duration: 2.2
+    Strength: 0.55
+    Seed: 0
+  - Name: Falling 2
+    Time: 153.65
+    Type: 0
+    Duration: 2.2
+    Strength: 0.75
+    Seed: 0
+  - Name: Falling 3
+    Time: 155.85
+    Type: 0
+    Duration: 2.15
+    Strength: 1
+    Seed: 0
+  - Name: Impact
+    Time: 158
+    Type: 0
+    Duration: 0.8
+    Strength: 1.3
+    Seed: 0
+  - Name: Blackout
+    Time: 158
+    Type: 2
+    Duration: 0
+    Strength: 1
+    Seed: 0
+  - Name: Sequence End
+    Time: 166.5
+    Type: 3
+    Duration: 0
+    Strength: 0
+    Seed: 0
+--- !u!1 &3708154108224901219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5626752073040211527}
+  - component: {fileID: 6602362567177829209}
+  m_Layer: 0
+  m_Name: Shaft Above
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5626752073040211527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708154108224901219}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.3, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6602362567177829209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3708154108224901219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
+--- !u!1 &3850027405480313724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5850353580084276768}
+  - component: {fileID: 7074226435818142700}
+  m_Layer: 0
+  m_Name: Call Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5850353580084276768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3850027405480313724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9, y: 2.5, z: -2.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7074226435818142700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3850027405480313724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
+--- !u!1 &4105161646607811943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115254025734066356}
+  - component: {fileID: 388743316357143754}
+  - component: {fileID: 6530912393143883880}
+  m_Layer: 0
+  m_Name: Subtitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &115254025734066356
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105161646607811943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6376062293663668401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 64}
+  m_SizeDelta: {x: 1500, y: 130}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &388743316357143754
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105161646607811943}
+  m_CullTransparentMesh: 1
+--- !u!114 &6530912393143883880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105161646607811943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4a97c4f845ed40f4bb881d0832ce335e, type: 2}
+  m_sharedMaterial: {fileID: -7675373035898908824, guid: 4a97c4f845ed40f4bb881d0832ce335e, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 38
+  m_fontSizeBase: 38
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 2
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 1024
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &4839507607962808729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3003521691220717797}
+  - component: {fileID: 1211824765523074830}
+  m_Layer: 0
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3003521691220717797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839507607962808729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6376062293663668401}
+  m_Father: {fileID: 1523128806097109176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211824765523074830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4839507607962808729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17632e97c4e53de499bcc373e9fb4ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SequenceEffects
+  _shakeTarget: {fileID: 0}
+  _shakeOffset: 0.035
+  _shakeAngle: 1.5
+  _shakeFrequency: 18
+  _lights: []
+  _flickerDarkness: 0.75
+  _fade: {fileID: 211407749571086523}
+  _subtitle: {fileID: 6530912393143883880}
+  _subtitleOutline: 0.2
+--- !u!1 &5453976464803276981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2227914437888892742}
+  - component: {fileID: 6663588588527840446}
+  - component: {fileID: 6558229979738392994}
+  - component: {fileID: 8926376248854622649}
+  m_Layer: 0
+  m_Name: Voice Overs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2227914437888892742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453976464803276981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1523128806097109176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6663588588527840446
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453976464803276981}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 32
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6558229979738392994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453976464803276981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 0
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
+--- !u!114 &8926376248854622649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453976464803276981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6945c21a61f45f58a6967bf500b2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoiceOverManager
+  VCSource: {fileID: 6663588588527840446}
+  _defaultEmitter: {fileID: 6558229979738392994}
+  _showSubtitles: 1
+  _victimColor: {r: 0.86, g: 0.85, b: 0.8, a: 1}
+  _killerColor: {r: 0.82, g: 0.2, b: 0.16, a: 1}
+  _subtitleTailTrim: 1.2
+--- !u!1 &5605077325182274855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9181245936593311369}
+  - component: {fileID: 8216980626228494347}
+  m_Layer: 0
+  m_Name: Landing Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9181245936593311369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605077325182274855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.45, z: -1.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8216980626228494347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605077325182274855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
+--- !u!1 &5994965912971800546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7785461266105923963}
+  - component: {fileID: 8832108744718199252}
+  - component: {fileID: 7649659648272082292}
+  - component: {fileID: 6242459946871192886}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7785461266105923963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994965912971800546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1523128806097109176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &8832108744718199252
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994965912971800546}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7649659648272082292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994965912971800546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 0
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
+--- !u!114 &6242459946871192886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994965912971800546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e048eab6eb3b409bbc37396860d746e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXManager
+  SFXSource: {fileID: 8832108744718199252}
+  _defaultEmitter: {fileID: 7649659648272082292}
+--- !u!1 &8505579635753268611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7658529213656847531}
+  - component: {fileID: 8708767625550828086}
+  m_Layer: 0
+  m_Name: Victim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7658529213656847531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505579635753268611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17, y: 2.7, z: -3.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8708767625550828086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505579635753268611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path:
+  - Time: 0
+    Position: {x: -17, y: 2.7, z: -3.6}
+  - Time: 35
+    Position: {x: -15.6, y: 2.7, z: -3.7}
+  - Time: 36.5
+    Position: {x: -15, y: 2.7, z: -5.4}
+  - Time: 45.6
+    Position: {x: -15, y: 2.7, z: -5.4}
+  - Time: 46.6
+    Position: {x: -14.2, y: 2.7, z: -3.8}
+  - Time: 55.5
+    Position: {x: -13, y: 2.7, z: -3.6}
+  - Time: 58
+    Position: {x: -12.6, y: 2.7, z: -3.6}
+  - Time: 62
+    Position: {x: 0.3, y: 2.7, z: -2.4}
+  - Time: 84.8
+    Position: {x: 0.3, y: 2.7, z: -2.4}
+  - Time: 87
+    Position: {x: 1.5, y: 2.65, z: -2.5}
+  - Time: 93.5
+    Position: {x: 2, y: 2.6, z: -2.6}
+  - Time: 103.5
+    Position: {x: 2.3, y: 2.2, z: -2.7}
+  - Time: 113
+    Position: {x: 2.3, y: 1.9, z: -2.7}
+--- !u!1 &8884664014988529229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6376062293663668401}
+  - component: {fileID: 5841654669189181873}
+  - component: {fileID: 1969662883635967615}
+  m_Layer: 0
+  m_Name: Sequence Overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6376062293663668401
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8884664014988529229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2210160600773073855}
+  - {fileID: 115254025734066356}
+  m_Father: {fileID: 3003521691220717797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!223 &5841654669189181873
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8884664014988529229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 50
+  m_TargetDisplay: 0
+--- !u!114 &1969662883635967615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8884664014988529229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!1 &9079077441900693812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4133785953830071131}
+  - component: {fileID: 6671103195144482509}
+  m_Layer: 0
+  m_Name: Cab Roof
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4133785953830071131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079077441900693812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.55, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072530456889270798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6671103195144482509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079077441900693812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc7254edb63224cafd798fa35a0257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEmitter
+  _spatial: 1
+  _spread: 40
+  _minDistance: 60
+  _maxDistance: 120
+  _path: []
