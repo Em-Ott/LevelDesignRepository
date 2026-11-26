@@ -1,7 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
+
+/// <summary>
+/// Enum of all the phases in the game
+/// _L is for scenes that happen in the living room
+/// _K is for scenes that happen in the kitchen
+/// </summary>
 public enum GamePhases
 {
+    Title,
     InShelter,
     InCarrier_L,
     ScaredOfEating_K,
@@ -10,21 +19,32 @@ public enum GamePhases
     ScaredOfThunder_K,
     Sick_L,
     Dead_K,
-    Title
+    End
 }
 
+/// <summary>
+/// A script that handles all of the scene progression from title to end.
+/// </summary>
 public class SceneProgression : MonoBehaviour
 {
     public GamePhases Phase { get; private set; }
+    // public GameObject L_TrackerObject
+    // public GameObject K_TrackerObject
 
-    void Start()
+    // private LivingRoomTracker L_Phase;
+    // private KitchenTracker K_Phase;
+    public void Start()
     {
         Phase = GamePhases.Title;
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void PressPlay()
+    public void Update()
     {
-        ChangePhase();
+        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            ChangePhase();
+        }
     }
 
     public void ToShelter()
@@ -42,6 +62,11 @@ public class SceneProgression : MonoBehaviour
         LoadSceneByName("Kitchen");
     }
 
+    public void ToEnd()
+    {
+        // this is optional, don't know if we're going to implement.
+    }
+
     private void LoadSceneByName(string name)
     {
         SceneManager.LoadScene(name);
@@ -51,7 +76,6 @@ public class SceneProgression : MonoBehaviour
     {
         switch (Phase)
         {
-
             case GamePhases.Title:                      // Check the current GamePhase
                 Phase = GamePhases.InShelter;           // Change the current to the next corresponding phase
                 ToShelter();                            // Change the Scene
@@ -83,6 +107,10 @@ public class SceneProgression : MonoBehaviour
             case GamePhases.Sick_L:
                 Phase = GamePhases.Dead_K;
                 ToKitchen();
+                break;
+            case GamePhases.Dead_K:
+                Phase = GamePhases.End;
+                ToEnd();
                 break;
         }
 
