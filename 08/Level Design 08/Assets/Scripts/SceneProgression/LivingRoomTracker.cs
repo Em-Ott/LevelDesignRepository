@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -10,13 +11,12 @@ using UnityEngine;
 public class LivingRoomTracker : MonoBehaviour
 {
     public SceneProgression SceneProgression;
+    [SerializeField] GameObject FirstPlay;
+    [SerializeField] GameObject SecondPlay;
+    [SerializeField] GameObject ThirdPlay;
+    [SerializeField] private List<Transform> PlayerPositions;
+
     private GamePhases Phase;
-
-    [SerializeField] GameObject DuringCarrier;
-    [SerializeField] GameObject DuringPlay;
-    [SerializeField] GameObject DuringPetting;
-    [SerializeField] GameObject DuringSickness;
-
 
     public void Start()
     {
@@ -30,29 +30,23 @@ public class LivingRoomTracker : MonoBehaviour
     {
         switch (Phase)
         {
-            case GamePhases.InCarrier_L:
-                DuringCarrier.SetActive(true);
-                DuringPlay.SetActive(false);
-                DuringPetting.SetActive(false);
-                DuringSickness.SetActive(false);
+            case GamePhases.Play_First:
+                FirstPlay.SetActive(true);
+                SecondPlay.SetActive(false);
+                ThirdPlay.SetActive(false);
+                SceneProgression.ChangePlayerPos(PlayerPositions[0]);
                 break;
-            case GamePhases.PlayingWithOwner_L:
-                DuringCarrier.SetActive(false);
-                DuringPlay.SetActive(true);
-                DuringPetting.SetActive(false);
-                DuringSickness.SetActive(false);
+            case GamePhases.Play_Second:
+                FirstPlay.SetActive(false);
+                SecondPlay.SetActive(true);
+                ThirdPlay.SetActive(false);
+                SceneProgression.ChangePlayerPos(PlayerPositions[1]);
                 break;
-            case GamePhases.BeingPet_L:
-                DuringCarrier.SetActive(false);
-                DuringPlay.SetActive(false);
-                DuringPetting.SetActive(true);
-                DuringSickness.SetActive(false);
-                break;
-            case GamePhases.Sick_L:
-                DuringCarrier.SetActive(false);
-                DuringPlay.SetActive(false);
-                DuringPetting.SetActive(false);
-                DuringSickness.SetActive(true);
+            case GamePhases.Play_Third:
+                FirstPlay.SetActive(false);
+                SecondPlay.SetActive(false);
+                ThirdPlay.SetActive(true);
+                SceneProgression.ChangePlayerPos(PlayerPositions[2]);
                 break;
         }
     }

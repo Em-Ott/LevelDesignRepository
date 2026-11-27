@@ -12,13 +12,13 @@ public enum GamePhases
 {
     Title,
     InShelter,
-    InCarrier_L,
-    ScaredOfEating_K,
-    PlayingWithOwner_L,
-    BeingPet_L,
-    ScaredOfThunder_K,
-    Sick_L,
-    Dead_K,
+    Play_First,
+    Eat_First,
+    Play_Second,
+    Eat_Second,
+    Play_Third,
+    Eat_Third,
+    Death,
     End
 }
 
@@ -28,14 +28,17 @@ public enum GamePhases
 public class SceneProgression : MonoBehaviour
 {
     public GamePhases Phase { get; private set; }
-    // public GameObject L_TrackerObject
-    // public GameObject K_TrackerObject
+    public PlayerAge CatAge { get; set; }
+    public ObjectToInteractWith TargetObjects { get; set; }
+    public ScreenBlink ScreenBlink;
 
-    // private LivingRoomTracker L_Phase;
-    // private KitchenTracker K_Phase;
+    [SerializeField] private GameObject PlayerObj;
+
+
     public void Start()
     {
         Phase = GamePhases.Title;
+        ScreenBlink = GetComponent<ScreenBlink>();
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -46,6 +49,22 @@ public class SceneProgression : MonoBehaviour
             ChangePhase();
         }
     }
+
+    public void ChangePlayerPos(Transform transform)
+    {
+        if (PlayerObj == null)
+        {
+            PlayerObj = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        if (PlayerObj != null)
+        {
+            PlayerObj.transform.position = transform.position;
+        }
+
+        Debug.Log($"[SceneProgression] - PlayerObj null?: {PlayerObj == null}");
+    }
+
 
     public void ToShelter()
     {
@@ -79,38 +98,50 @@ public class SceneProgression : MonoBehaviour
             case GamePhases.Title:                      // Check the current GamePhase
                 Phase = GamePhases.InShelter;           // Change the current to the next corresponding phase
                 ToShelter();                            // Change the Scene
+                ScreenBlink.TriggerBlink();
                 break;
             case GamePhases.InShelter:
-                Phase = GamePhases.InCarrier_L;
-                ToLivingRoom();
-                break;
-            case GamePhases.InCarrier_L:
-                Phase = GamePhases.ScaredOfEating_K;
+                Phase = GamePhases.Eat_First;
                 ToKitchen();
+                ScreenBlink.TriggerBlink();
                 break;
-            case GamePhases.ScaredOfEating_K:
-                Phase = GamePhases.PlayingWithOwner_L;
+            case GamePhases.Eat_First:
+                Phase = GamePhases.Play_First;
                 ToLivingRoom();
+                ScreenBlink.TriggerBlink();
                 break;
-            case GamePhases.PlayingWithOwner_L:
-                Phase = GamePhases.BeingPet_L;
-                ToLivingRoom();
-                break;
-            case GamePhases.BeingPet_L:
-                Phase = GamePhases.ScaredOfThunder_K;
+            case GamePhases.Play_First:
+                Phase = GamePhases.Eat_Second;
+                CatAge.ChangeAge();
                 ToKitchen();
+                ScreenBlink.TriggerBlink();
                 break;
-            case GamePhases.ScaredOfThunder_K:
-                Phase = GamePhases.Sick_L;
+            case GamePhases.Eat_Second:
+                Phase = GamePhases.Play_Second;
                 ToLivingRoom();
+                ScreenBlink.TriggerBlink();
                 break;
-            case GamePhases.Sick_L:
-                Phase = GamePhases.Dead_K;
+            case GamePhases.Play_Second:
+                Phase = GamePhases.Eat_Third;
+                CatAge.GetComponent<PlayerAge>().ChangeAge();
                 ToKitchen();
+                ScreenBlink.TriggerBlink();
                 break;
-            case GamePhases.Dead_K:
+            case GamePhases.Eat_Third:
+                Phase = GamePhases.Play_Third;
+                ToLivingRoom();
+                ScreenBlink.TriggerBlink();
+                break;
+            case GamePhases.Play_Third:
+                Phase = GamePhases.Death;
+                CatAge.GetComponent<PlayerAge>().ChangeAge();
+                ToKitchen();
+                ScreenBlink.TriggerBlink();
+                break;
+            case GamePhases.Death:
                 Phase = GamePhases.End;
                 ToEnd();
+                ScreenBlink.TriggerBlink();
                 break;
         }
 

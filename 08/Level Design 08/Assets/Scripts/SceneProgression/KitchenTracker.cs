@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -10,11 +11,13 @@ using UnityEngine;
 public class KitchenTracker : MonoBehaviour
 {
     public SceneProgression SceneProgression;
-    private GamePhases Phase;
+    [SerializeField] private GameObject FirstEat;
+    [SerializeField] private GameObject SecondEat;
+    [SerializeField] private GameObject ThirdEat;
+    [SerializeField] private GameObject DeathScene;
 
-    [SerializeField] GameObject DuringEating;
-    [SerializeField] GameObject DuringThunder;
-    [SerializeField] GameObject DuringDeath;
+    [SerializeField] private List<Transform> PlayerPositions;
+    private GamePhases Phase;
 
 
     public void Start()
@@ -29,20 +32,29 @@ public class KitchenTracker : MonoBehaviour
     {
         switch (Phase)
         {
-            case GamePhases.Dead_K:
-                DuringEating.SetActive(false);
-                DuringThunder.SetActive(false);
-                DuringDeath.SetActive(true);
+            case GamePhases.Eat_First:
+                FirstEat.SetActive(true);
+                SecondEat.SetActive(false);
+                ThirdEat.SetActive(false);
+                SceneProgression.ChangePlayerPos(PlayerPositions[0]);
                 break;
-            case GamePhases.ScaredOfEating_K:
-                DuringEating.SetActive(true);
-                DuringThunder.SetActive(false);
-                DuringDeath.SetActive(false);
+            case GamePhases.Eat_Second:
+                FirstEat.SetActive(false);
+                SecondEat.SetActive(true);
+                ThirdEat.SetActive(false);
+                SceneProgression.ChangePlayerPos(PlayerPositions[1]);
                 break;
-            case GamePhases.ScaredOfThunder_K:
-                DuringEating.SetActive(false);
-                DuringThunder.SetActive(true);
-                DuringDeath.SetActive(false);
+            case GamePhases.Eat_Third:
+                FirstEat.SetActive(false);
+                SecondEat.SetActive(false);
+                ThirdEat.SetActive(true);
+                SceneProgression.ChangePlayerPos(PlayerPositions[2]);
+                break;
+            case GamePhases.Death:
+                FirstEat.SetActive(false);
+                SecondEat.SetActive(false);
+                ThirdEat.SetActive(false);
+                SceneProgression.ChangePlayerPos(PlayerPositions[3]);
                 break;
         }
     }
